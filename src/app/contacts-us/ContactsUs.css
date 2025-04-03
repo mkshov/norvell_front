@@ -1,0 +1,114 @@
+.contacts-background {
+  background-image: url(../../../public/assets/aboutus/contactsUs_background.jpg);
+  width: 100%;
+  height: 60vh;
+  background-size: cover;
+  background-position-y: -100px;
+}
+.contacts {
+  width: 100%;
+  display: flex;
+  margin-bottom: -100px;
+  justify-content: center;
+}
+.contacts-container {
+  width: 950px;
+  background-color: #01041e;
+  position: relative;
+  bottom: 220px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+}
+.contacts-header {
+  text-align: center;
+  width: 60%;
+  margin-top: 70px;
+}
+.contacts-header h2 {
+  letter-spacing: 10px;
+  margin-bottom: 15px;
+}
+.contacts-info {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  padding: 50px;
+  flex-wrap: wrap;
+}
+.contacts-blocks {
+  text-align: center;
+  margin-bottom: 50px;
+  padding: 10px;
+}
+.contacts-blocks h6 {
+  letter-spacing: 5px;
+}
+.contacts-blocks h4 {
+  font-weight: bold;
+  color: #ffffffb0;
+  letter-spacing: 5px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.contacts-form {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-bottom: 100px;
+}
+.contacts-form-inputs {
+  width: 40%;
+}
+.contacts-form-inputs-inner {
+  display: flex;
+  flex-direction: column;
+}
+.contacts-form-img {
+  width: 635px;
+}
+.contacts-form-img img {
+  width: 100%;
+}
+@media all and (max-width: 1150px) {
+  .contacts-form-img {
+    display: none;
+  }
+  .contacts-form-inputs {
+    width: 90%;
+  }
+}
+@media all and (max-width: 1060px) {
+  .contacts-container {
+    width: 90%;
+  }
+  .contacts-background {
+    background-position: inherit;
+  }
+}
+@media all and (max-width: 700px) {
+  .contacts-header h2 {
+    font-size: 25px;
+  }
+  .contacts-header h4 {
+    font-size: 17px;
+  }
+  .css-1dxcdol-MuiSvgIcon-root {
+    font-size: 40px !important;
+  }
+  .contacts-blocks h4 {
+    font-size: 27px;
+  }
+  .contacts-blocks h6 {
+    font-size: 15px;
+  }
+  .contacts-form-inputs h4 {
+    font-size: 1.5rem;
+    margin-top: 15px;
+  }
+  .contacts-form-inputs h5 {
+    font-size: 1.2rem;
+  }
+}

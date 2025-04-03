@@ -35,8 +35,159 @@ a {
   text-decoration: none;
 }
 
+/* ---------- */
+
+@font-face {
+  font-family: "Futura PT Light";
+  src: local("Futura PT Light"), url(../../public/fonts/FuturaPT-Light.ttf);
+}
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Futura PT Light", sans-serif !important;
+  font-variant-numeric: lining-nums;
+  user-select: auto;
+}
+html {
+  scroll-behavior: smooth;
+}
+::-webkit-scrollbar-track {
+  background-color: white;
+}
+
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+  background-color: white;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #01041e;
+}
+
+/* tegs */
+a {
+  color: black !important;
+  text-decoration: none !important;
+}
+h3 {
+  font-family: "Futura PT Light" !important;
+}
+li {
+  list-style-type: none;
+}
+img {
+  display: block;
+}
+li {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+/* tegs end */
+
+.slick-dots li button:before {
+  color: #01041e !important;
+}
+
+/* displays */
+
+.disp-f {
+  display: flex;
+}
+.d-flex-j-content-c {
+  display: flex !important;
+  justify-content: center !important;
+}
+.f-start {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+/*  */
+
+.main-button {
+  transition: all 0.5s ease !important;
+  color: #01041e !important;
+  background-color: #01041e;
+  border: 2px solid #01041e !important;
+  font-weight: bold;
+  letter-spacing: 0.2em !important;
+  border-radius: 0 !important;
+  text-transform: uppercase;
+}
+.main-button:hover {
+  transition: 0.2s;
+  letter-spacing: 0.2em !important;
+  color: white !important;
+  background-color: #01041e !important;
+}
+.button-white {
+  transition: all 0.5s ease !important;
+  color: white !important;
+  border: 1px solid white !important;
+  letter-spacing: 0.2em !important;
+  border-radius: 0 !important;
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 1;
+  font-size: 17px;
+  background-color: transparent;
+  padding: 10px;
+  outline: none;
+}
+.button-white:hover {
+  transition: 0.5s;
+  background-color: #01041e !important;
+  border: 1px solid #01041e !important;
+  letter-spacing: 0.5em !important;
+}
+.button-black {
+  color: black !important;
+  border: 1px solid black !important;
+  border-radius: 0 !important;
+}
+.button-black:hover {
+  transition: 0.5s;
+  color: white !important;
+  background-color: black !important;
+  letter-spacing: 0.9 !important;
+}
+
+.slick-arrow.slick-prev,
+.slick-arrow.slick-next {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 5;
+  top: 20vw;
+}
+.slick-prev {
+  left: 30px !important;
+  border-top-right-radius: 7px;
+  border-bottom-right-radius: 7px;
+}
+.slick-next {
+  right: 20px !important;
+  border-bottom-left-radius: 7px;
+  border-top-left-radius: 7px;
+}
+.slick-prev::before,
+.slick-next::before {
+  display: none;
+}
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
+  }
+}
+
+@media all and (max-width: 830px) {
+  .slick-arrow.slick-prev,
+  .slick-arrow.slick-next {
+    top: 50%;
   }
 }

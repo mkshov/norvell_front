@@ -1,0 +1,9 @@
+export { default as Footer } from "./Footer";
+export { default as Header } from "./Header";
+export { default as Sidebar } from "./Header/Sidebar";
+export { default as Slider } from "./Slider/Slider";
+export { default as MyModal } from "./Modal/MyModal";
+export { default as Recommended } from "./Recommended/Recommended";
+export { default as MyAccordion } from "./MyAccordion/MyAccordion";
+export { default as Drawer } from "./Drawer/Drawer";
+export { default as ProductInfo } from "./ProductInfo/ProductInfo";

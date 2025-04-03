@@ -1,0 +1,136 @@
+.about-us-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 40px;
+  color: #01041e;
+}
+.about-us-header img {
+  margin-top: 20px;
+  width: 350px;
+}
+
+/* ---- img-txt-block ----  */
+
+.img-txt-block2 {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 50px;
+}
+.img-txt-mobile2 {
+  display: none;
+}
+.img-txt-inner2 {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 40px;
+}
+.img-txt-inner2 h4 {
+  margin-bottom: 50px;
+}
+.img-txt-inner2 p {
+  margin-bottom: 15px;
+  font-size: 20px;
+}
+.img-txt-inner2 p:hover {
+  color: #987f40;
+}
+.img-txt-block2 img {
+  width: 560px;
+}
+/* ----------------- */
+
+.section-2 {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.section-2-container {
+  width: 100%;
+  margin-top: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+.section-2-blocks {
+  width: 320px;
+  margin: 10px;
+}
+.section-2-blocks img {
+  width: 100%;
+}
+.section-2-inner1 {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 25px;
+}
+.section-2-inner2 {
+  width: 200px;
+}
+
+@media all and (max-width: 1150px) {
+  .img-txt-block2 {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .img-txt-mobile2 {
+    display: block;
+    text-align: center;
+  }
+  .img-txt-mobile2 h4 {
+    margin-bottom: 20px;
+  }
+  .img-txt-mobile2 p {
+    margin-top: 10px;
+    font-size: 20px;
+  }
+  .visable2 {
+    display: none;
+  }
+  .img-txt-inner2 {
+    padding: 0;
+    margin-top: 20px;
+  }
+}
+@media all and (max-width: 920px) {
+  .section-2-blocks {
+    width: 60%;
+  }
+  .section-2-inner2 {
+    width: 70%;
+  }
+  .section-2-blocks img {
+    margin-top: 10px;
+  }
+}
+@media all and (max-width: 600px) {
+  .section-2-blocks {
+    width: 75%;
+  }
+  .section-2-inner2 {
+    width: 65%;
+  }
+}
+
+@media all and (max-width: 700px) {
+  .img-txt-block2 img {
+    width: 100%;
+  }
+  .img-txt-inner2 {
+    text-align: center;
+    width: 100%;
+    padding: 20px;
+    margin-top: 0;
+  }
+}
+@media all and (max-width: 450px) {
+  .img-txt-mobile2 h4 {
+    font-size: 30px;
+  }
+}
