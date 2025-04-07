@@ -8,14 +8,13 @@ const trousers = [
     description_it:
       "Pantalone in twill di cotone e lino con 2 pinces bianche interamente tagliate e cucite a mano a Casalnuovo, dai nostri maestri artigiani. Questo capo è ideale per completare un look casual curato nei minimi dettagli e che possa distinguersi per classe e raffinatezza.",
     description_en:
-      "Cotton and linen twill trousers with 2 solid white pleats entirely cut and hand-sewn in Casalnuovo, by our master craftsmen. This garment is ideal to complete a casual look with attention to the smallest details and that can stand out for its class and refinement. ",
+      "Брюки из хлопка и льна с двумя белыми складками, полностью выкроенные и сшитые вручную в Касальнуово нашими мастерами. Эта модель идеально дополняет повседневный образ, продуманный до мелочей и выделяющийся своим классом и изысканностью.",
     price: 1500,
     price2: 2200,
     image: "/assets/products/trousers/143645635_1.jpg",
     image2: "/assets/products/trousers/143645635_2.jpg",
     image3: "/assets/products/trousers/143645635_3.jpg",
   },
-
   {
     id: 234635642,
     route: "clothing",
@@ -25,7 +24,7 @@ const trousers = [
     description_it:
       "Pantalone in lana plissettata grigio chiaro interamente tagliato e cucito a mano a Casalnuovo, dai nostri maestri artigiani. Questo capo è ideale per completare con stile ed eleganza outfit sia formali che per il tempo libero. Tasche con cuciture, bottoni e cintura, 1 tasca frontale e 2 tasche posteriori.",
     description_en:
-      "Plain light gray pleated wool trousers entirely cut and hand-sewn in Casalnuovo, by our master craftsmen. This garment is ideal for completing both formal and leisure outfits with style and elegance. Seam pockets, buttons and waistband , 1 front pocket and 2 back pockets.",
+      "Брюки из светло-серой плиссированной шерсти, полностью выкроенные и сшитые вручную в Касальнуово нашими мастерами. Идеальны для завершения как формального, так и повседневного образа со стилем и элегантностью. Карманы со швами, пуговицы и пояс, 1 передний и 2 задних кармана.",
     price: 890,
     price2: 1200,
     image: "/assets/products/trousers/234635642_1.jpg",
@@ -41,7 +40,7 @@ const trousers = [
     description_it:
       "Pantalone in cotone plissettato beige tinta unita interamente tagliato e cucito a mano a Casalnuovo, dai nostri maestri artigiani. Questo capo è ideale per completare un look casual curato nei dettagli e che può distinguersi per classe e raffinatezza. Tasche cucite, bottoni e cintura, 1 tasca frontale e 2 tasche posteriori.",
     description_en:
-      "Plain beige pleated cotton trousers entirely cut and hand-sewn in Casalnuovo, by our master craftsmen. This garment is ideal for completing a casual look with attention to detail and which can stand out for its class and refinement. Stitched pockets, buttons and waistband, 1 front pocket and 2 back pockets.",
+      "Бежевые плиссированные брюки из хлопка, полностью выкроенные и сшитые вручную в Касальнуово нашими мастерами. Отлично дополнят повседневный образ, уделяющий внимание деталям и выделяющийся утонченностью и классом. Карманы со швами, пуговицы и пояс, 1 передний и 2 задних кармана.",
     price: 1250,
     price2: 1400,
     image: "/assets/products/trousers/235634563_1.jpg",
@@ -57,7 +56,7 @@ const trousers = [
     description_it:
       "Pantalone in lana grigia interamente tagliato e cucito a mano a Casalnuovo, dai nostri maestri artigiani. Questo capo è ideale per completare un outfit formale e occasionale con stile ed eleganza. Tasche con cuciture, bottoni e cintura, 1 tasca sul davanti e 2 tasche posteriori.",
     description_en:
-      "Gray wool trousers entirely cut and hand-sewn in Casalnuovo, by our master craftsmen. This garment is ideal for completing a formal and occasional outfit with style and elegance. Seam pockets, buttons and waistband, 1 pocket on the front and 2 rear pockets.",
+      "Серые шерстяные брюки, полностью выкроенные и сшитые вручную в Касальнуово нашими мастерами. Прекрасно подойдут для завершения как формального, так и особого наряда со стилем и элегантностью. Карманы со швами, пуговицы и пояс, 1 передний и 2 задних кармана.",
     price: 1800,
     price2: 2000,
     image: "/assets/products/trousers/256456344_1.jpg",
@@ -73,7 +72,7 @@ const trousers = [
     description_it:
       "Pantalone in tela di lana blu interamente tagliato e cucito a mano a Casalnuovo, dai nostri maestri artigiani. Questo capo è ideale per completare un outfit formale e occasionale con stile ed eleganza. Tasche con cuciture, bottoni e cintura, 1 tasca sul davanti e 2 tasche posteriori.",
     description_en:
-      "Trousers in blue wool canvas entirely cut and hand-sewn in Casalnuovo, by our master craftsmen. This garment is ideal for completing a formal and occasional outfit with style and elegance. Seam pockets, buttons and waistband, 1 pocket on the front and 2 back pockets.",
+      "Брюки из синей шерстяной ткани, полностью выкроенные и сшитые вручную в Касальнуово нашими мастерами. Идеальны для завершения формального или праздничного образа со стилем и элегантностью. Карманы со швами, пуговицы и пояс, 1 передний и 2 задних кармана.",
     price: 1240,
     price2: 1300,
     image: "/assets/products/trousers/53456345_1.jpg",
@@ -89,7 +88,7 @@ const trousers = [
     description_it:
       "Pantalone in lana grigia interamente tagliato e cucito a mano a Casalnuovo, dai nostri maestri artigiani. Questo capo è ideale per completare un outfit formale e occasionale con stile ed eleganza. Tasche con cuciture, bottoni e cintura, 1 tasca sul davanti e 2 tasche posteriori.",
     description_en:
-      "Gray wool trousers entirely cut and hand-sewn in Casalnuovo, by our master craftsmen. This garment is ideal for completing a formal and occasional outfit with style and elegance. Seam pockets, buttons and waistband, 1 pocket on the front and 2 rear pockets.",
+      "Серые шерстяные брюки, полностью выкроенные и сшитые вручную в Касальнуово нашими мастерами. Отличный выбор для завершения формального или торжественного образа со стилем и элегантностью. Карманы со швами, пуговицы и пояс, 1 передний и 2 задних кармана.",
     price: 1100,
     price2: 1340,
     image: "/assets/products/trousers/624562423_1.jpg",
@@ -105,7 +104,7 @@ const trousers = [
     description_it:
       "Pantalone blu plissettato in cotone ed elastan interamente tagliato e cucito a mano a Casalnuovo, dai nostri maestri artigiani. Questo capo è ideale per completare un look casual curato nei minimi dettagli e che può distinguersi per classe e raffinatezza. Tasche con cuciture, bottoni e cintura, 1 tasca frontale e 2 tasche posteriori con rane",
     description_en:
-      "Blue pleated cotton and elastane trousers entirely cut and hand-sewn in Casalnuovo, by our master craftsmen. This garment is ideal for completing a casual look with attention to the smallest details and which can stand out for its class and refinement. Seam pockets, buttons and waistband, 1 front pocket and 2 back pockets with frogs",
+      "Синие плиссированные брюки из хлопка с эластаном, полностью выкроенные и сшитые вручную в Касальнуово нашими мастерами. Идеальны для завершения повседневного образа, продуманного до мелочей, который выделяется классом и утонченностью. Карманы со швами, пуговицы и пояс, 1 передний и 2 задних кармана с «лягушками».",
     price: 1390,
     price2: 1450,
     image: "/assets/products/trousers/72346236534_1.jpg",
@@ -121,7 +120,7 @@ const trousers = [
     description_it:
       "Senza pence tinta unita bordeaux interamente tagliata e cucita a mano a Casalnuovo, dai nostri maestri artigiani. Questo capo è ideale per completare un look casual curato nei minimi dettagli e che può distinguersi per classe e raffinatezza Tasche con cucitura, bottoni e girovita, 1 tasca frontale con patta, 2 tasche posteriori con rane.",
     description_en:
-      "Without pences solid burgundy color entirely cut and hand-sewn in Casalnuovo, by our master craftsmen. This garment is ideal for completing a casual look with attention to the smallest details and which can stand out for its class and refinement Seam pockets, buttons and waistband, 1 front pocket with flap, 2 back pockets with frogs.",
+      "Брюки без складок бордового цвета, полностью выкроенные и сшитые вручную в Касальнуово нашими мастерами. Идеальны для создания повседневного образа с вниманием к мельчайшим деталям, выделяющегося своим классом и утонченностью. Карманы со швами, пуговицы и пояс, 1 передний карман с клапаном, 2 задних кармана с «лягушками».",
     price: 1800,
     price2: 1990,
     image: "/assets/products/trousers/23462356238_1.jpg",
@@ -137,7 +136,7 @@ const trousers = [
     description_it:
       "Senza pieghe in tinta unita color tortora interamente tagliate e cucite a mano a Casalnuovo, dai nostri maestri artigiani. Questo capo è ideale per completare un look casual curato nei minimi dettagli e che può distinguersi per classe e raffinatezza Tasche con cucitura, bottoni e girovita, 1 tasca frontale con patta, 2 tasche posteriori con rane.",
     description_en:
-      "Without pleats in dove gray solid color entirely cut and hand-sewn in Casalnuovo, by our master craftsmen. This garment is ideal for completing a casual look with attention to the smallest details and which can stand out for its class and refinement Seam pockets, buttons and waistband, 1 front pocket with flap, 2 back pockets with frogs.",
+      "Брюки без складок однотонного цвета «тортола», полностью выкроенные и сшитые вручную в Касальнуово нашими мастерами. Прекрасно дополняют повседневный образ, продуманный до мелочей и отличающийся элегантностью и классом. Карманы со швами, пуговицы и пояс, 1 передний карман с клапаном, 2 задних кармана с «лягушками».",
     price: 1300,
     price2: 1450,
     image: "/assets/products/trousers/92346235423_1.jpg",
@@ -153,7 +152,7 @@ const trousers = [
     description_it:
       "Senza pieghe in tinta beige interamente tagliate e cucite a mano a Casalnuovo, dai nostri maestri artigiani. Questo capo è ideale per completare un look casual curato nei minimi dettagli e che può distinguersi per classe e raffinatezza Tasche con cucitura, bottoni e girovita, 1 tasca frontale con patta, 2 tasche posteriori con rane.",
     description_en:
-      "Without pleats in solid beige entirely cut and hand-sewn in Casalnuovo, by our master craftsmen. This garment is ideal for completing a casual look with attention to the smallest details and which can stand out for its class and refinement Seam pockets, buttons and waistband, 1 front pocket with flap, 2 back pockets with frogs.",
+      "Брюки без складок однотонного бежевого цвета, полностью выкроенные и сшитые вручную в Касальнуово нашими мастерами. Идеальны для повседневного образа с вниманием к деталям и утончённым стилем. Карманы со швами, пуговицы и пояс, 1 передний карман с клапаном, 2 задних с «лягушками».",
     price: 850,
     price2: 1150,
     image: "/assets/products/trousers/23462463510_1.jpg",

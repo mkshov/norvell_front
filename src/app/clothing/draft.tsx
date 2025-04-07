@@ -57,8 +57,8 @@ const Draft: React.FC<DraftProps> = ({ nameProduct, products: initialProducts, l
   return (
     <div>
       <Tabs value={sortPrice} onChange={handleChange} centered textColor="secondary" indicatorColor="secondary">
-        <Tab sx={{ fontWeight: "bold" }} label="lowToHigh" value="asc" />
-        <Tab sx={{ fontWeight: "bold" }} label="highToLow" value="desc" />
+        <Tab sx={{ fontWeight: "bold" }} label="Сначала дешевле" value="asc" />
+        <Tab sx={{ fontWeight: "bold" }} label="Сначала дороже" value="desc" />
       </Tabs>
       <div className="card-container">
         {sortedProducts.map((item) => (
@@ -87,7 +87,7 @@ const Draft: React.FC<DraftProps> = ({ nameProduct, products: initialProducts, l
       >
         <Box sx={{ textAlign: "center" }}>
           <Typography variant="h5" color="secondary">
-            Contact us for more information on our costumes
+            Свяжитесь с нами, чтобы получить дополнительную информацию о наших костюмах
           </Typography>
           <MyModal />
         </Box>

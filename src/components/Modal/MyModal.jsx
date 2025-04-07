@@ -1,40 +1,38 @@
 "use client";
-import React, { useState, useRef } from "react";
+import React, { useRef } from "react";
 import emailjs from "emailjs-com";
 
-import { Alert, Box, Button, TextField, Typography } from "@mui/material";
+import { Box, Button, TextField, Typography } from "@mui/material";
 import LoadingButton from "@mui/lab/LoadingButton";
 import Modal from "@mui/material/Modal";
 
 import "../../app/contacts-us/ContactsUs.css";
+import { toast } from "sonner";
 
 const MyModal = () => {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
-  const [success, setSuccess] = useState(false);
   const formRef = useRef();
   const sendEmail = (e) => {
     e.preventDefault();
 
-    emailjs
-      .sendForm("service_ffkn9jj", "template_9e9tkig", formRef.current, "b7MhDtuBxTDx_R8H9")
-      .then((result) => {
-        console.log(result.text);
-        setSuccess(true);
-      })
-      .catch((error) => {
-        console.log(error.text);
-        alert("FAILED...", error);
-      });
+    emailjs.sendForm("service_by1ehlm", "template_0ln86ec", formRef.current, "CJqh9bnj_JwtW_aZI").then(
+      (result) => {
+        toast.success("Ваше сообщение успешно отправлено!");
+      },
+      (error) => {
+        toast.error(`Ошибка! Статус ошибки - ${error?.status}`);
+      }
+    );
 
-    e.target.reset();
+    e.currentTarget.reset();
   };
   return (
     <Box>
       <Button onClick={handleOpen} sx={{ marginTop: "10px" }} className="main-button">
-        contacts us
+        Наши контакты
       </Button>
       <Modal open={open} onClose={handleClose} aria-labelledby="modal-modal-title" aria-describedby="modal-modal-description">
         <Box
@@ -55,18 +53,18 @@ const MyModal = () => {
                 cursor: "pointer",
               }}
             >
-              close
+              Закрыть
             </Typography>
           </Box>
           <form ref={formRef} onSubmit={sendEmail} className="contacts-form-inputs">
             <Typography variant="h4" sx={{ color: "#01041e" }}>
-              contactsUsText2
+              Хотите связаться с нами?
             </Typography>
-            <Typography variant="h5">contactsUsText3 </Typography>
-            <Typography variant="h5">contactsUsText4</Typography>
+            <Typography variant="h5">Пожалуйста, воспользуйтесь формой ниже. </Typography>
+            <Typography variant="h5">Все поля обязательны для заполнения.</Typography>
             <div className="contacts-form-inputs-inner">
               <Typography sx={{ marginTop: "40px" }} variant="h6">
-                contactsUsText5
+                Имя
               </Typography>
               <TextField
                 required
@@ -74,7 +72,7 @@ const MyModal = () => {
                 type="text"
                 color="secondary"
                 variant="outlined"
-                placeholder="contactsUsText5"
+                placeholder="Имя"
                 InputProps={{
                   style: {
                     fontSize: "25px",
@@ -82,14 +80,14 @@ const MyModal = () => {
                 }}
               />
               <Typography sx={{ marginTop: "20px" }} variant="h6">
-                Email
+                Почта
               </Typography>
               <TextField
                 required
                 name="from_email"
                 color="secondary"
                 variant="outlined"
-                placeholder="Email"
+                placeholder="Почта"
                 type="email"
                 InputProps={{
                   style: {
@@ -98,14 +96,10 @@ const MyModal = () => {
                 }}
               />
               <Typography sx={{ marginTop: "20px" }} variant="h6">
-                contactsUsText6
+                Сообщение
               </Typography>
-              <TextField required multiline name="message" rows={4} color="secondary" variant="outlined" placeholder="contactsUsText7" />
-              {success && (
-                <Alert sx={{ marginTop: "20px" }} variant="outlined" severity="success">
-                  contactsUsAlert
-                </Alert>
-              )}
+              <TextField required multiline name="message" rows={4} color="secondary" variant="outlined" placeholder="Ваше сообщение" />
+
               <LoadingButton
                 sx={{
                   marginTop: "20px",
@@ -117,7 +111,7 @@ const MyModal = () => {
                 value="Send Message"
                 // loading={state.submitting}
               >
-                contactsUsButton
+                Отправить
               </LoadingButton>
             </div>
           </form>

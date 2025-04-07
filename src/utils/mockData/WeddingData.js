@@ -8,7 +8,7 @@ const wedding = [
     description_it:
       "Abito doppiopetto con 6 bottoni, 2 tasche applicate, 1 taschino barca, mezza fodera, doppia impuntura, maniche a camicia, spacchi laterali. Tinta unita beige con una raffinata miscela di fibre di lino e lana, interamente tagliata e cucita a mano dai nostri maestri sarti. È un abito versatile ideale per creare un look non molto formale senza compromettere l'eleganza. 2 pantaloni a pieghe con bottoni e cintura, fibbie laterali, cinturino esteso senza passanti, 1 tasca frontale e 2 tasche posteriori.",
     description_en:
-      "Double-breasted suit with 6 buttons, 2 patch pockets, 1 small boat pocket, half lining, double topstitching, shirt sleeves, side slits. Solid beige color with a refined blend of linen and wool fibers, entirely cut and sewn by hand by our master tailors. It is a versatile dress ideal for creating a not very formal look without compromising on elegance. 2 pleats trousers with buttons and waistband, side buckles, extended strap without belt loops, 1 front pocket and 2 back pockets.",
+      "Двубортный костюм на 6 пуговицах, 2 накладных кармана, 1 маленький карман-лодочка, полуподкладка, двойная отстрочка, рукава рубашечного типа, боковые разрезы. Сплошной бежевый цвет с изысканной смесью льняных и шерстяных волокон, полностью раскроенный и сшитый вручную нашими мастерами-портными. Это универсальное платье идеально подходит для создания не очень официального образа без ущерба для элегантности. Брюки с двумя складками, пуговицами и поясом, боковыми пряжками, удлиненным ремнем без петель для ремня, 1 передним и 2 задними карманами.",
     price: 3100,
     price2: 3600,
     image: "/assets/products/everyday/256324324572_1.jpg",
@@ -24,7 +24,7 @@ const wedding = [
     description_it:
       "Smoking monopetto in lana anni ' 150 1 rever a picco con bottoni, 2 tasche a filetto, 1 taschino per barca, spacchi laterali, completamente foderato. Nero massiccio, interamente tagliato e cucito a mano dai nostri maestri sarti. Pantalone senza pinces con bottoni e cintura, bande laterali in seta, 1 tasca frontale e 2 tasche posteriori.",
     description_en:
-      "Single-breasted tuxedo in 150'S wool 1 button peak lapel, 2 welt pockets, 1 small boat pocket, side slits, fully lined. Solid black, entirely cut and sewn by hand by our master tailors. Trousers without pleats with buttons and waistband, silk side bands, 1 front pocket and 2 back pockets.",
+      "Однобортный смокинг из шерсти 150-х годов с отворотом на 1 пуговице, 2 накладными карманами, 1 маленьким карманом-лодочкой, боковыми разрезами, полностью на подкладке. Однотонный черный, полностью выкроен и сшит вручную нашими мастерами. Брюки без складок с пуговицами и поясом, шелковые боковые ленты, 1 передний и 2 задних кармана.",
     price: 1220,
     price2: 1489,
     image: "/assets/products/everyday/335472454_1.jpg",
@@ -40,7 +40,7 @@ const wedding = [
     description_it:
       "Completo: Completo monopetto 3 bottoni, 2 tasche dritte con patta, 1 tasca stile barchetta, maniche manica camicia, 2 spacchi, completamente foderato. Strisce blu tono su tono tagliate a mano e cucite dai nostri maestri sarti. Un raffinato abito in lana leggera da indossare per eventi business o formali. Pantalone: Pantalone piatto frontale con bottone, 1 tasca frontale e 2 tasche posteriori.",
     description_en:
-      "Suit: Suit single breasted 3 buttons, 2 straight pockets with flaps, 1 pocket barchetta style, sleeves manica camicia, 2 vents, fully lined. Blue striped tone on tone hand cut and sawn by our master tailors. A refined suit in a light wool to wear for business or formal vents. Trouser: Trousers flat front with button's fly, 1 front pocket and 2 back pockets.",
+      "Костюм: Костюм с одной грудью на 3 пуговицах, 2 прямых кармана с клапанами, 1 карман в стиле барчетта, рукава manica camicia, 2 вентиляционных отверстия, полностью на подкладке. Синяя полоска тон в тон, выкроенная и распиленная вручную нашими мастерами-портными. Изысканный костюм из легкой шерсти для деловых или официальных мероприятий. Брюки: Брюки с плоским передом и ширинкой на пуговицах, 1 передний карман и 2 задних кармана.",
     price: 1600,
     price2: 1955,
     image: "/assets/products/everyday/784276_1.jpg",
@@ -57,7 +57,7 @@ const wedding = [
     description_it:
       "Completo: Completo monopetto 3 bottoni, 2 tasche dritte con patta, 1 taschino sul petto stile barchetta, maniche manica camicia, 2 spacchi, completamente foderato. Solid royal blue interamente tagliato a mano e cucito dai nostri maestri sarti. Un raffinato abito in lana da indossare per eventi business o formali. Pantalone: Pantalone piatto frontale con bottone, 1 tasca frontale e 2 tasche posteriori.",
     description_en:
-      "Suit: Suit single breasted 3 buttons, 2 straight pockets with flaps, 1 chest pocket barchetta style, sleeves manica camicia, 2 vents, fully lined. Solid royal blue entirely hand cut and sawn by our master tailors. A refined suit in wool to wear for business or formal events. Trouser: Trousers flat front with button's fly, 1 front pocket and 2 back pockets.",
+      "Костюм: Костюм с одной грудью на 3 пуговицах, 2 прямых кармана с клапанами, 1 нагрудный карман в стиле barchetta, рукава manica camicia, 2 вентиляционных отверстия, полностью на подкладке. Сплошной королевский синий цвет, полностью выкроенный и вырезанный вручную нашими мастерами-портными. Изысканный костюм из шерсти для деловых и официальных мероприятий. Брюки: Брюки с плоским передом и ширинкой на пуговицах, 1 передний и 2 задних кармана.",
     price: 2400,
     price2: 3550,
     image: "/assets/products/everyday/334545268907656_1.jpg",
@@ -73,7 +73,7 @@ const wedding = [
     description_it:
       "Completo: Completo monopetto 3 bottoni, 2 tasche dritte con patta, 1 tasca stile barchetta, maniche manica camicia, 2 spacchi, completamente foderato. Solido grigio interamente tagliato a mano e cucito dai nostri maestri sarti. Un raffinato abito in lana da indossare per eventi business o formali. Pantalone: Pantalone piatto frontale con bottone, 1 tasca frontale e 2 tasche posteriori.",
     description_en:
-      "Suit: Suit single breasted 3 buttons, 2 straight pockets with flaps, 1 pocket barchetta style, sleeves manica camicia, 2 vents, fully lined. Solid gray entirely hand cut and sewn by our master tailors. A refined suit in wool to wear for business or formal events. Trouser: Trousers flat front with button's fly, 1 front pocket and 2 back pockets. ",
+      "Костюм: Костюм однобортный на 3 пуговицах, 2 прямых кармана с клапанами, 1 карман в стиле барчетта, рукава manica camicia, 2 вентиляционных отверстия, полностью на подкладке. Цельнокроеный серый костюм полностью сшит вручную нашими мастерами-портными. Изысканный костюм из шерсти для деловых и официальных мероприятий. Брюки: Брюки с плоским передом и ширинкой на пуговицах, 1 передний и 2 задних кармана. ",
     price: 3200,
     price2: 4590,
     image: "/assets/products/everyday/789786765_1.jpg",
@@ -89,7 +89,7 @@ const wedding = [
     description_it:
       "Abito: Abito non strutturato, monopetto, 3 bottoni, 2 tasche dritte con patta, 1 tasca stile barchetta, maniche manica camicia, 2 spacchi. Blu con strisce rosse, interamente tagliate a mano e cucite dai nostri maestri sarti. Un raffinato abito in lana leggera da indossare per eventi business o formali. Pantalone: Pantalone piatto frontale con bottone, 1 tasca frontale e 2 tasche posteriori",
     description_en:
-      "Suit: Unconstructed suit, single breasted, 3 buttons, 2 straight pockets with flaps, 1 pocket barchetta style, sleeves manica camicia, 2 vents. Blue with red stripes, entirely hand cut and sewn by our master tailors. A refined suit in light wool to wear for business or formal events. Trouser: Trousers flat front with button's fly, 1 front pocket and 2 back pockets",
+      "Костюм: Неприталенный костюм, однобортный, 3 пуговицы, 2 прямых кармана с клапанами, 1 карман в стиле барчетта, рукава manica camicia, 2 вентиляционных отверстия. Синий с красными полосками, полностью ручной крой и пошив нашими мастерами. Изысканный костюм из легкой шерсти для деловых и официальных мероприятий. Брюки: Брюки с плоским передом и ширинкой на пуговицах, 1 передний и 2 задних кармана",
     price: 2240,
     price2: 2540,
     name: "a",
@@ -106,7 +106,7 @@ const wedding = [
     description_it:
       "Abito: Completo monopetto 3 bottoni, gessato Navy interamente realizzato a mano dai nostri maestri a Casalnuovo. Realizzato in lana e cashmere perfetto per eventi aziendali. Un abito senza tempo che rappresenta le nostre tradizioni. 2 tasche dritte con patta, 1 taschino sul petto 'stile barca', maniche stile camicia, doppi spacchi. Pantalone: Pantalone piatto frontale, flyer con zip, 1 tasca cambio davanti, 2 tasche posteriori.",
     description_en:
-      "Suit: Suit single breasted 3 buttons, Navy pinstripe entirely handmade from our masters in Casalnuovo. Made of wool and cashmere perfect for business events. A timeless suit that represent our traditions. 2 straight pockets with flaps, 1 chest pocket 'boat style', sleeves shirt style, double vents. Trouser: Trousers flat front, zip flyer, 1 change pocket in front, 2 back pockets.",
+      "Костюм: Костюм с одной грудью на 3 пуговицах, темно-синий в полоску, полностью ручной работы от наших мастеров в Казальнуово. Изготовленный из шерсти и кашемира, он идеально подходит для деловых мероприятий. Вневременной костюм, олицетворяющий наши традиции. 2 прямых кармана с клапанами, 1 нагрудный карман в стиле «лодочка», рукава рубашечного типа, двойные вентиляционные отверстия. Брюки: Брюки с плоским передом, ширинка на молнии, 1 карман для мелочей спереди, 2 задних кармана.",
     price: 1225,
     price2: 1460,
     image: "/assets/products/everyday/1072343526809_1.jpg",
@@ -122,7 +122,7 @@ const wedding = [
     description_it:
       "Abito: Abito monopetto 3 bottoni, grigio con quadri blu royal, interamente realizzato a mano dai nostri maestri sarti di Casalnuovo. Realizzato in lana raffinata è perfetto per l'uomo più sofisticato. Il design con controlli rendono questo un abito originale. 2 tasche dritte con patta, 1 taschino sul petto 'stile barca', maniche stile camicia, doppi spacchi. Pantalone: Pantalone piatto frontale, flyer con zip, 1 tasca cambio davanti, 2 tasche posteriori.",
     description_en:
-      "Suit: Suit single breasted 3 bottons, gray with royal blue checks, entirely hand made from our master tailors in Casalnuovo. Made of refined wool is perfect for the more sofisticated man. The design with checks make this an original suit. 2 straight pockets with flaps, 1 chest pocket 'boat style', sleeves shirt style, double vents. Trouser: Trousers flat front, zip flyer, 1 change pocket in front, 2 back pockets.",
+      "Костюм: Костюм с одной грудью, 3 нижних слоя, серый с королевской синей клеткой, полностью сшит вручную нашими портными в Казальнуово. Изготовленный из изысканной шерсти, он идеально подходит для более софистичного мужчины. Дизайн в клетку делает этот костюм оригинальным. 2 прямых кармана с клапанами, 1 нагрудный карман в стиле «лодочка», рукава рубашечного типа, двойные вентиляционные отверстия. Брюки: Брюки с плоским передом, ширинка на молнии, 1 карман для мелочей спереди, 2 задних кармана.",
     price: 1225,
     price2: 1460,
     image: "/assets/products/everyday/235356809_1.jpg",
@@ -138,7 +138,7 @@ const wedding = [
     description_it:
       "Abito: Abito doppiopetto, rever a picco 6 bottoni, tinta unita marrone, interamente realizzato a mano dai nostri maestri sarti di Casalnuovo. Realizzata in raffinata lana 150 ' dona un look perfetto per occasioni speciali o eventi formali. 2 tasche dritte con patta, 1 taschino sul petto 'stile barca', maniche stile camicia, doppi spacchi. Pantalone: Pantalone 2 lembi con spacco esteso, linguette laterali e bottone, 1 tasca cambio davanti, 2 tasche posteriori",
     description_en:
-      "Suit: Suit double breasted, 6 bottons peak lapel, solid brown, entirely hand made from our master tailors in Casalnuovo. Made of refined 150' wool gives a look perfect for special occasions or formal events. 2 straight pockets with flaps, 1 chest pocket 'boat style', sleeves shirt style, double vents. Trouser: Trousers 2 flaps with extended vent, side tabs and botton fly, 1 change pocket in front, 2 back pockets",
+      "Костюм: Костюм с двойной грудью, 6 нижних лацканов, однотонный коричневый, полностью сшит вручную нашими мастерами в Казальнуово. Изготовленный из изысканной шерсти 150', он идеально подходит для особых случаев или официальных мероприятий. 2 прямых кармана с клапанами, 1 нагрудный карман в стиле «лодочка», рукава рубашечного типа, двойные вентиляционные отверстия. Брюки: Брюки с 2 клапанами и расширенной вентиляцией, боковыми планками и нижней ширинкой, 1 карман для мелочей спереди, 2 задних кармана",
     price: 1225,
     price2: 1460,
     image: "/assets/products/everyday/342674526809_1.jpg",

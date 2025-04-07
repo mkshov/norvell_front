@@ -14,47 +14,47 @@ const Footer = () => {
     // <div className="footer">
     <div className="footer-container">
       <section className="sections">
-        <Typography variant="h6">DANIEL HAZARD</Typography>
+        <Typography variant="h6">GRAND HILL</Typography>
         <div>
           <Typography onClick={handleClickFooterNavigate("/about-us")} variant="subtitle">
-            About Us
+            О нас
           </Typography>
           <Typography onClick={handleClickFooterNavigate("/contacts-us")} variant="subtitle">
-            Contacts Us
+            Наши контакты
           </Typography>
         </div>
       </section>
       <section className="sections">
         <Typography sx={{ textTransform: "uppercase" }} variant="h6">
-          Our Products
+          Наши продукты
         </Typography>
         <div>
           <Typography onClick={handleClickFooterNavigate("/suits/everyday")} variant="subtitle">
-            Everyday
+            На каждый день
           </Typography>
           <Typography onClick={handleClickFooterNavigate("/suits/wedding")} variant="subtitle">
-            Wedding
+            На свадьбу
           </Typography>
           <Typography onClick={handleClickFooterNavigate("/clothing/jackets")} variant="subtitle">
-            Jackets
+            Пиджаки
           </Typography>
           <Typography onClick={handleClickFooterNavigate("/clothing/trousers")} variant="subtitle">
-            Trousers
+            Брюки
           </Typography>
         </div>
       </section>
       <section className="sections">
-        <Typography variant="h6">COLLECTIONS</Typography>
+        <Typography variant="h6">КОЛЛЕКЦИИ</Typography>
         <div>
-          <Typography onClick={handleClickFooterNavigate("/collections-spring-summer-2022")} variant="subtitle">
-            Spring - Summer/2022
+          <Typography onClick={handleClickFooterNavigate("/collections/spring-summer/")} variant="subtitle">
+            Весна - лето
           </Typography>
-          <Typography onClick={handleClickFooterNavigate("/collections-autumn-winter-2022-23")} variant="subtitle">
-            Autumn Winter 2022/23
+          <Typography onClick={handleClickFooterNavigate("/collections/autumn-winter/")} variant="subtitle">
+            Осень - зима
           </Typography>
         </div>
       </section>
-      <section className="sections">
+      {/* <section className="sections">
         <Typography sx={{ textTransform: "uppercase" }} variant="h6">
           Follow Us
         </Typography>
@@ -63,7 +63,7 @@ const Footer = () => {
           <Typography variant="subtitle">Twitter</Typography>
           <Typography variant="subtitle">Instagram</Typography>
         </div>
-      </section>
+      </section> */}
     </div>
     // </div>
   );

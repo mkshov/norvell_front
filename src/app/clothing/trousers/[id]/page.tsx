@@ -5,7 +5,7 @@ import { ArrowBackIos, ArrowForwardIos } from "@mui/icons-material";
 import { Typography } from "@mui/material";
 import { Drawer, MyAccordion, ProductInfo, Recommended } from "@/components";
 import { useParams } from "next/navigation";
-import trousersProducts from "@/utils/mockData/TrousersData";
+import trousersData from "@/utils/mockData/TrousersData";
 
 // Типизация пропсов для кнопок
 interface BtnProps {
@@ -47,7 +47,7 @@ const Details: React.FC = () => {
   const productId = productIdRaw ? parseInt(productIdRaw, 10) : undefined; // Преобразуем в число или undefined
 
   // Ищем продукт, только если productId определен
-  const currentProduct = productId !== undefined ? trousersProducts.find((item) => item.id === productId) : undefined;
+  const currentProduct = productId !== undefined ? trousersData.find((item) => item.id === productId) : undefined;
 
   // Обработка случая, если продукт не найден
   if (productId === undefined || !currentProduct) {
@@ -104,19 +104,19 @@ const Details: React.FC = () => {
               </Typography>
             </div>
             <Typography variant="h6" sx={{ marginTop: "10px", marginBottom: "20px" }}>
-              details1
+              Модернизированный классический костюм, созданный для комфорта и удобства.
             </Typography>
             <ul>
-              <li>details2</li>
-              <li>details3</li>
-              <li>details4</li>
-              <li>details5</li>
+              <li>Большой размерный ряд</li>
+              <li>Качественный материал</li>
+              <li>Комфортная ходьба</li>
+              <li>Хорошо сидит на фигуре</li>
             </ul>
           </div>
           <div className="product-info3">
             <MyAccordion />
             <Typography variant="h6" sx={{ marginTop: "50px" }}>
-              {currentProduct?.description_en || "No description available"}
+              {currentProduct?.description_en || "Описание отсутствует"}
             </Typography>
             <Drawer />
           </div>

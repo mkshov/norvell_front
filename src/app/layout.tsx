@@ -7,6 +7,7 @@ import { Box, CssBaseline } from "@mui/material";
 import { ThemeProvider } from "@mui/material/styles";
 import theme from "../theme";
 
+import { Toaster } from "sonner";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { Footer, Header } from "@/components";
@@ -30,6 +31,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
+        <Toaster richColors />
         <ThemeProvider theme={theme}>
           <AppRouterCacheProvider>
             <CssBaseline />

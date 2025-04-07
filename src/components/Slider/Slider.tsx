@@ -39,7 +39,7 @@ const settings: Settings = {
   speed: 500,
   slidesToShow: 1,
   autoplay: false,
-  autoplaySpeed: 7000,
+  autoplaySpeed: 9000,
 };
 
 // Типы для пропсов нашего слайдера

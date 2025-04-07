@@ -104,19 +104,19 @@ const Details: React.FC = () => {
               </Typography>
             </div>
             <Typography variant="h6" sx={{ marginTop: "10px", marginBottom: "20px" }}>
-              details1
+              Модернизированный классический костюм, созданный для комфорта и удобства.
             </Typography>
             <ul>
-              <li>details2</li>
-              <li>details3</li>
-              <li>details4</li>
-              <li>details5</li>
+              <li>Большой размерный ряд</li>
+              <li>Качественный материал</li>
+              <li>Комфортная ходьба</li>
+              <li>Хорошо сидит на фигуре</li>
             </ul>
           </div>
           <div className="product-info3">
             <MyAccordion />
             <Typography variant="h6" sx={{ marginTop: "50px" }}>
-              {currentProduct?.description_en || "No description available"}
+              {currentProduct?.description_en || "Описание отсутствует"}
             </Typography>
             <Drawer />
           </div>

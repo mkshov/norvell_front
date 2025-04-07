@@ -30,26 +30,29 @@ const MyAccordion = () => {
     <div>
       <CustomAccordion className="my-accordion" expanded={expanded === "panel1"} onChange={handleChange("panel1")}>
         <AccordionSummary expandIcon={expanded === false ? <AddIcon /> : <RemoveIcon />} aria-controls="panel1a-content" id="panel1a-header">
-          <Typography>detailsSizeFit</Typography>
+          <Typography>РАЗМЕРЫ И ПОСАДКА</Typography>
         </AccordionSummary>
         <AccordionDetails>
           <ul>
-            <li>detailsSizeFitChild1</li>
-            <li>detailsSizeFitChild2</li>
-            <li>detailsSizeFitChild3</li>
-            <li>detailsSizeFitChild4</li>
+            <li>Мы рекомендуем использовать кнопку "Таблица размеров", чтобы проверить свой размер.</li>
+            <li>Посадка: индивидуальная - между стандартной и облегающей посадкой.</li>
+            <li>Длина костюма оптимальна для большинства людей.</li>
+            <li>
+              Наши костюмы могут быть сшиты с учетом соответствующего опыта. Пожалуйста, пользуйтесь услугами портного, который уверен, что сможет
+              работать с нашими материалами и конструкцией.
+            </li>
           </ul>
         </AccordionDetails>
       </CustomAccordion>
       <CustomAccordion className="my-accordion" expanded={expanded2 === "panel1"} onChange={handleChange2("panel1")}>
         <AccordionSummary expandIcon={expanded2 === false ? <AddIcon /> : <RemoveIcon />} aria-controls="panel1a-content" id="panel1a-header">
-          <Typography>detailsMaterialCare</Typography>
+          <Typography>МАТЕРИАЛЫ И УХОД</Typography>
         </AccordionSummary>
         <AccordionDetails>
           <ul>
-            <li>detailsMaterialCareChild1</li>
-            <li>detailsMaterialCareChild2</li>
-            <li>detailsMaterialCareChild3</li>
+            <li>76% шерсть, 20% вискоза, 4% лайкра</li>
+            <li>Только сухая чистка</li>
+            <li>Гладьте только при необходимости, используйте самый холодный режим.</li>
           </ul>
         </AccordionDetails>
       </CustomAccordion>

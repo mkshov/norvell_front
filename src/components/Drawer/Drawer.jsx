@@ -37,11 +37,11 @@ export default function TemporaryDrawer() {
               cursor: "pointer",
             }}
           >
-            close
+            Закрыть
           </Typography>
           <div className="sg-ctn">
             <div className="sg-ctn2 j-sg-ctn">
-              <div className="sg-title">sizeGuide</div>
+              <div className="sg-title">РУКОВОДСТВО ПО РАЗМЕРАМ</div>
               <div className="sg-close iconfont">&#xe655;</div>
               <div className="sg-table-wrap">
                 <Box
@@ -53,42 +53,42 @@ export default function TemporaryDrawer() {
                   <table className="sg-table j-cm-table table1" cellSpacing="0" cellPadding="0">
                     <tbody>
                       <tr className="trhead">
-                        <td className="border-right">euroSize</td>
+                        <td className="border-right">Евроразмер</td>
                         <td className="border-right">
                           <div className="measure-wrap">
                             <span>A</span>
                           </div>
-                          chest(CM)
+                          грудь(CM)
                         </td>
                         <td className="border-right">
                           <div className="measure-wrap">
                             <span>B</span>
                           </div>
-                          waist(CM)
+                          талия(CM)
                         </td>
                         <td className="border-right">
                           <div className="measure-wrap">
                             <span>C</span>
                           </div>
-                          hip(CM)
+                          бедро(CM)
                         </td>
                         <td className="border-right">
                           <div className="measure-wrap">
                             <span>D</span>
                           </div>
-                          thigh(CM)
+                          бедро(CM)
                         </td>
                         <td className="border-right">
                           <div className="measure-wrap">
                             <span>E</span>
                           </div>
-                          inseam(CM)
+                          длина по внутреннему шву(CM)
                         </td>
                         <td className="border-right">
                           <div className="measure-wrap">
                             <span>F</span>
                           </div>
-                          sleeve(CM)
+                          рукав(CM)
                         </td>
                       </tr>
                       <tr className="cm-inch">
@@ -186,43 +186,49 @@ export default function TemporaryDrawer() {
                     <div className="measure-wrap">
                       <h6>
                         <span>A</span>
-                        chest
+                        грудь
                       </h6>
-                      <p>chestChild</p>
+                      <p>
+                        Стоя с расслабленными руками по бокам, оберните гибкую рулетку вокруг груди в самой большой точке Рулетка должна проходить
+                        через подмышку и оставаться параллельной полу во время измерения
+                      </p>
                     </div>
                     <div className="measure-wrap">
                       <h6>
-                        <span>B</span> waist
+                        <span>B</span> талия
                       </h6>
-                      <p>waistChild</p>
+                      <p>Стоя в расслабленной позе, измерьте окружность своей талии, держа рулетку параллельно полу.</p>
                     </div>
                     <div className="measure-wrap">
                       <h6>
                         <span>C</span>
-                        hip
+                        бедро
                       </h6>
-                      <p>hipChild</p>
+                      <p>Стоя в расслабленной позе, измерьте окружность самой полной части бедер, держа рулетку параллельно полу.</p>
                     </div>
                     <div className="measure-wrap">
                       <h6>
                         <span>D</span>
-                        thigh
+                        бедро
                       </h6>
-                      <p>thighChild</p>
+                      <p>Стоя в расслабленной позе, измерьте окружность бедра чуть ниже промежности, держа рулетку параллельно полу.</p>
                     </div>
                     <div className="measure-wrap">
                       <h6>
                         <span>E</span>
-                        inseam
+                        длина по внутреннему шву
                       </h6>
-                      <p>inseamChild</p>
+                      <p>Стоя в расслабленной позе, измерьте общую длину внутренней стороны ноги от промежности до лодыжки.</p>
                     </div>
                     <div className="measure-wrap">
                       <h6>
                         <span>F</span>
-                        sleeve
+                        рукав
                       </h6>
-                      <p>sleeveChild</p>
+                      <p>
+                        Стоя с расслабленными руками по бокам, поместите один конец гибкой рулетки на пик плеча. Измерьте вниз по руке, через точку
+                        локтя, и закончите у кости запястья.
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -239,7 +245,7 @@ export default function TemporaryDrawer() {
       {["right"].map((anchor) => (
         <React.Fragment key={anchor}>
           <Button sx={{ fontWeight: "bold" }} onClick={toggleDrawer(anchor, true)} className="main-button">
-            sizeChart
+            Таблица размеров
           </Button>
           <Drawer anchor={anchor} open={state[anchor]} onClose={toggleDrawer(anchor, false)}>
             {list(anchor)}

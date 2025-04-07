@@ -45,7 +45,7 @@ const Recommended: React.FC = () => {
 
   return (
     <div className="recommended">
-      <Typography variant="h4">recommendedProducts</Typography>
+      <Typography variant="h4">Рекомендуемые товары</Typography>
       <img src="https://i.shgcdn.com/b1dfc452-0cb3-40a2-9fa1-4cfdcbfe5f13/-/format/auto/-/preview/3000x3000/-/quality/lighter/" alt="" />
       <div className="recommended-container">
         {recommended.map((item) => (
@@ -54,7 +54,7 @@ const Recommended: React.FC = () => {
               <img className="product-img" src={item.image} alt={item.title} />
               <div className="middle">
                 <Button onClick={handleClickNavigate(`/${item.route}/${item.route2}/${item.id}`)} className="main-button">
-                  discoverMore
+                  УЗНАТЬ БОЛЬШЕ
                 </Button>
               </div>
             </div>

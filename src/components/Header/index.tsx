@@ -88,7 +88,7 @@ export default function Header() {
           <Box className="header-logo">
             <img onClick={handleDraft2} className={navImage} onMouseEnter={handleCloseShopMenu} src="/assets/grand_hill_black.svg" alt="logo" />
           </Box>
-          <div className="border3"></div>
+          <div className="border3 header-routes"></div>
           <Box className="header-routes holder">
             <Box
               sx={{
@@ -105,18 +105,22 @@ export default function Header() {
         <Collapse className="header-category" in={isOpenShopMenu}>
           <ul>
             <Box className="header-category-box">
-              <Typography variant="h6">SUITS</Typography>
-              <li onClick={handleClickNavigate("/suits/everyday")}>Everyday</li>
-              <li onClick={handleClickNavigate("/suits/wedding")}>Wedding</li>
+              <Typography variant="h6">КОСТЮМЫ</Typography>
+              <li onClick={handleClickNavigate("/suits/everyday")}>На каждый день</li>
+              <li onClick={handleClickNavigate("/suits/wedding")}>На свадьбу</li>
             </Box>
             <Box className="header-category-box">
-              <Typography variant="h6">Clothing</Typography>
-              <li onClick={handleClickNavigate("/clothing/jackets")}>Jackets</li>
-              <li onClick={handleClickNavigate("/clothing/trousers")}>Trousers</li>
+              <Typography variant="h6">ОДЕЖДА</Typography>
+              <li onClick={handleClickNavigate("/clothing/jackets")}>Пиджаки</li>
+              <li onClick={handleClickNavigate("/clothing/trousers")}>Брюки</li>
             </Box>
-
+            <Box className="header-category-box">
+              <Typography variant="h6">КОЛЛЕКЦИИ</Typography>
+              <li onClick={handleClickNavigate("/collections/spring-summer")}>Весна - лето</li>
+              <li onClick={handleClickNavigate("/collections/autumn-winter")}>Осень - зима</li>
+            </Box>
             <Box className="header-category-img">
-              <img src="/assets/HomePage/category-img.jpg" alt="suit-img" />
+              <img src="/assets/HomePage/men1.jpg" alt="suit-img" />
             </Box>
           </ul>
         </Collapse>

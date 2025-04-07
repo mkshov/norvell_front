@@ -1,32 +1,26 @@
 "use client";
-import React, { useState, useRef, FormEvent } from "react";
+import React, { useRef, FormEvent } from "react";
 import emailjs from "emailjs-com";
-import { Alert, TextField, Typography } from "@mui/material";
+import { TextField, Typography } from "@mui/material";
 import EmailIcon from "@mui/icons-material/Email";
 import LoadingButton from "@mui/lab/LoadingButton";
 
 import "./ContactsUs.css";
-
-interface FormRef {
-  current: HTMLFormElement | null;
-}
+import { toast } from "sonner";
 
 const ContactsUs: React.FC = () => {
-  const [success, setSuccess] = useState<boolean>(false);
   const formRef = useRef<HTMLFormElement>(null);
 
   const sendEmail = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     if (formRef.current) {
-      emailjs.sendForm("service_ffkn9jj", "template_9e9tkig", formRef.current, "b7MhDtuBxTDx_R8H9").then(
+      emailjs.sendForm("service_by1ehlm", "template_0ln86ec", formRef.current, "CJqh9bnj_JwtW_aZI").then(
         (result) => {
-          console.log(result.text);
-          setSuccess(true);
+          toast.success("Ваше сообщение успешно отправлено!");
         },
-        (error) => {
-          console.log(error.text);
-          alert(error);
+        (error: any) => {
+          toast.error(`Ошибка! Статус ошибки - ${error?.status}`);
         }
       );
 
@@ -40,14 +34,14 @@ const ContactsUs: React.FC = () => {
       <div className="contacts">
         <div className="contacts-container">
           <div className="contacts-header">
-            <Typography variant="h2">contactsUs</Typography>
-            <Typography variant="h6">contactsUsText</Typography>
+            <Typography variant="h2">КОНТАКТЫ</Typography>
+            <Typography variant="h6">Напишите нам на эту электронную почту, и мы постараемся ответить вам в течение дня.</Typography>
           </div>
           <div className="contacts-info">
             <div className="contacts-blocks">
               <EmailIcon sx={{ fontSize: "60px" }} />
-              <Typography variant="h4">Email</Typography>
-              <Typography variant="h6">danielhazard.info@gmail.com</Typography>
+              <Typography variant="h4">Почта</Typography>
+              <Typography variant="h6">grandhill.contact@gmail.com</Typography>
             </div>
           </div>
         </div>
@@ -55,13 +49,13 @@ const ContactsUs: React.FC = () => {
       <div className="contacts-form">
         <form ref={formRef} onSubmit={sendEmail} className="contacts-form-inputs">
           <Typography variant="h4" sx={{ color: "#01041e" }}>
-            contactsUsText2
+            Хотите связаться с нами?
           </Typography>
-          <Typography variant="h5">contactsUsText3</Typography>
-          <Typography variant="h5">contactsUsText4</Typography>
+          <Typography variant="h5">Пожалуйста, воспользуйтесь приведенной ниже формой.</Typography>
+          <Typography variant="h5">Все поля обязательны для заполнения.</Typography>
           <div className="contacts-form-inputs-inner">
             <Typography sx={{ marginTop: "30px" }} variant="h6">
-              contactsUsText5
+              Имя
             </Typography>
             <TextField
               required
@@ -69,7 +63,7 @@ const ContactsUs: React.FC = () => {
               type="text"
               color="secondary"
               variant="outlined"
-              placeholder="contactsUsText5"
+              placeholder="Имя"
               InputProps={{
                 style: {
                   fontSize: "25px",
@@ -77,14 +71,14 @@ const ContactsUs: React.FC = () => {
               }}
             />
             <Typography sx={{ marginTop: "20px" }} variant="h6">
-              Email
+              Почта
             </Typography>
             <TextField
               required
               name="from_email"
               color="secondary"
               variant="outlined"
-              placeholder="Email"
+              placeholder="Ваша почта"
               type="email"
               InputProps={{
                 style: {
@@ -93,14 +87,10 @@ const ContactsUs: React.FC = () => {
               }}
             />
             <Typography sx={{ marginTop: "20px" }} variant="h6">
-              contactsUsText6
+              Сообщение
             </Typography>
-            <TextField required multiline name="message" rows={4} color="secondary" variant="outlined" placeholder="contactsUsText7" />
-            {success && (
-              <Alert sx={{ marginTop: "20px" }} variant="outlined" severity="success">
-                contactsUsAlert
-              </Alert>
-            )}
+            <TextField required multiline name="message" rows={4} color="secondary" variant="outlined" placeholder="Ваше сообщение" />
+
             <LoadingButton
               sx={{
                 marginTop: "20px",
@@ -111,7 +101,7 @@ const ContactsUs: React.FC = () => {
               type="submit"
               // loading={state.submitting}
             >
-              contactsUsButton
+              Отправить
             </LoadingButton>
           </div>
         </form>

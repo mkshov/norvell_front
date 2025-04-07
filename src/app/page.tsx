@@ -58,13 +58,17 @@ const HomePage = () => {
         <Slider>
           <Box>
             <Box className="slide-1">
-              <img alt="Background" src="/assets/HomePage/img1.jpg" />
+              {/* <img alt="Background" src="/assets/HomePage/img1.jpg" /> */}
+              <video autoPlay loop muted playsInline className="video-background">
+                <source src="/assets/HomePage/video-banner-2.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
               <Box className="slide-1-overlay">
                 <Box data-aos="fade-center" data-aos-offset="200" data-aos-duration="500" className="slide-1-inner">
                   <Typography variant="h3">Новая коллекция</Typography>
                   <Typography variant="h5">Весна - лето</Typography>
                   <Typography variant="h4">Стилевые рамки</Typography>
-                  <Button className="main-button" onClick={handleClickNavigate("/collections-spring-summer-2022")} variant="outlined" color="inherit">
+                  <Button className="main-button" onClick={handleClickNavigate("/collections/spring-summer")} variant="outlined" color="inherit">
                     Узнать больше
                   </Button>
                 </Box>
@@ -78,7 +82,7 @@ const HomePage = () => {
                 <Box className="slide-2-inner">
                   <Typography variant="h3">Новая коллекция</Typography>
                   <Typography variant="h5">Весна - лето</Typography>
-                  <Button onClick={handleClickNavigate("/collections-spring-summer-2022")} className="main-button" variant="outlined" color="inherit">
+                  <Button onClick={handleClickNavigate("/collections/spring-summer")} className="main-button" variant="outlined" color="inherit">
                     Узнать больше
                   </Button>
                 </Box>
@@ -94,7 +98,7 @@ const HomePage = () => {
             <Typography variant="h3">Новая коллекция</Typography>
             <Typography variant="h5">Весна - лето</Typography>
             <Typography variant="h4">Стилевые рамки</Typography>
-            <Button className="main-button" onClick={handleClickNavigate("/collections-spring-summer-2022")} variant="outlined" color="inherit">
+            <Button className="main-button" onClick={handleClickNavigate("/collections/spring-summer2")} variant="outlined" color="inherit">
               Узнать больше
             </Button>
           </Box>
@@ -110,19 +114,19 @@ const HomePage = () => {
         </Box>
         <Box className="img-wrapper-container">
           <Box className="img-wrapper">
-            <img className="inner-img" src="/assets/HomePage/inner-img_1.jpg" alt="inner-img" />
+            <img className="inner-img" src="/assets/HomePage/men2.jpg" alt="inner-img" />
             <div className="middle" onClick={handleClickNavigate("/suits/everyday")}>
               <Button className="main-button">Узнать больше</Button>
             </div>
           </Box>
           <Box className="img-wrapper">
-            <img className="inner-img" src="/assets/HomePage/inner-img_2.jpg" alt="inner-img" />
-            <div className="middle" onClick={handleClickNavigate("/suits/everyday/256324324572")}>
+            <img className="inner-img" src="/assets/HomePage/men3.jpg" alt="inner-img" />
+            <div className="middle" onClick={handleClickNavigate("/suits/wedding/")}>
               <Button className="main-button">Узнать больше</Button>
             </div>
           </Box>
           <Box className="img-wrapper">
-            <img className="inner-img" src="/assets/HomePage/inner-img_3.jpg" alt="inner-img" />
+            <img className="inner-img" src="/assets/HomePage/men4.jpeg" alt="inner-img" />
             <div className="middle" onClick={handleClickNavigate("/suits/everyday")}>
               <Button className="main-button">Узнать больше</Button>
             </div>
@@ -263,9 +267,9 @@ const HomePage = () => {
         {/* info us start */}
         <Box className="info-us">
           <Box data-aos="fade-left" data-aos-offset="200" data-aos-duration="500" className="info-us-blocks">
-            <img className="info-usImg1" src="/assets/HomePage/img5.jpg" alt="" />
+            <img className="info-usImg1" src="/assets/HomePage/icon1.png" alt="" />
             <Box>
-              <Typography className="h4-txt1" variant="h4">
+              <Typography className="h4-txt1" variant="h5">
                 БОЛЕЕ 5.000 КОСТЮМОВ В НАЛИЧИИ
               </Typography>
             </Box>
@@ -273,17 +277,13 @@ const HomePage = () => {
           <Box data-aos="zoom-in" data-aos-offset="200" data-aos-duration="500" className="info-us-blocks">
             <img className="info-usImg1" src="/assets/HomePage/img6.svg" alt="" />
             <Box>
-              <Typography sx={{ color: "#01041e", fontWeight: "300", fontSize: "30px" }} variant="h4">
-                5-ЗВЕЗДОЧНЫЙ РЕЙТИНГ GOOGLE
-              </Typography>
+              <Typography variant="h5">5-ЗВЕЗДОЧНЫЙ РЕЙТИНГ GOOGLE</Typography>
             </Box>
           </Box>
           <Box data-aos="fade-right" data-aos-offset="200" data-aos-duration="500" className="info-us-blocks">
-            <img className="info-usImg1" src="/assets/HomePage/img7.jpg" alt="" />
+            <img className="info-usImg1" src="/assets/HomePage/icon2.png" alt="" />
             <Box>
-              <Typography sx={{ color: "#01041e", fontWeight: "300", fontSize: "30px" }} variant="h4">
-                БОЛЕЕ 40 ЛЕТ В БИЗНЕСЕ
-              </Typography>
+              <Typography variant="h5">БОЛЕЕ 40 ЛЕТ В БИЗНЕСЕ</Typography>
             </Box>
           </Box>
         </Box>
