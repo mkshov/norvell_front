@@ -1,9 +1,11 @@
 "use client";
 import React, { useRef, FormEvent } from "react";
 import emailjs from "emailjs-com";
-import { TextField, Typography } from "@mui/material";
+import { Box, TextField, Typography } from "@mui/material";
 import EmailIcon from "@mui/icons-material/Email";
 import LoadingButton from "@mui/lab/LoadingButton";
+import WhatsAppIcon from "@mui/icons-material/WhatsApp";
+import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
 
 import "./ContactsUs.css";
 import { toast } from "sonner";
@@ -42,6 +44,16 @@ const ContactsUs: React.FC = () => {
               <EmailIcon sx={{ fontSize: "60px" }} />
               <Typography variant="h4">Почта</Typography>
               <Typography variant="h6">grandhill.contact@gmail.com</Typography>
+
+              <Box sx={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "20px", marginTop: "10px" }}>
+                <Box sx={{ display: "flex", alignItems: "center", gap: "5px" }}>
+                  <LocalPhoneIcon fontSize="large" />
+                  <WhatsAppIcon fontSize="large" />
+                </Box>
+                <Typography sx={{ color: "white !important" }} variant="h6" component="a" href="tel:+79651167437">
+                  +7 (965) 116-74-37
+                </Typography>
+              </Box>
             </div>
           </div>
         </div>
