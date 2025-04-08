@@ -60,7 +60,7 @@ const Recommended: React.FC = () => {
             </div>
             <div className="text">
               <Typography sx={{ fontWeight: "300" }}>{item.title}</Typography>
-              <Typography sx={{ fontWeight: "300", letterSpacing: "1px" }}>€{item.price}</Typography>
+              <Typography sx={{ fontWeight: "300", letterSpacing: "1px" }}>{item.price}₽</Typography>
             </div>
           </div>
         ))}

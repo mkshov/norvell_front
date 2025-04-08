@@ -73,7 +73,7 @@ const Draft: React.FC<DraftProps> = ({ nameProduct, products: initialProducts, l
             </div>
             <div className="text">
               <Typography sx={{ fontWeight: "300" }}>{item.title}</Typography>
-              <Typography sx={{ fontWeight: "300", letterSpacing: "2px" }}>€{item.price}</Typography>
+              <Typography sx={{ fontWeight: "300", letterSpacing: "2px" }}>{item.price}₽</Typography>
             </div>
           </ProductCard>
         ))}

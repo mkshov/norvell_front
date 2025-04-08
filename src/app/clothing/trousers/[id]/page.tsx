@@ -97,10 +97,10 @@ const Details: React.FC = () => {
                 }}
                 variant="h5"
               >
-                €{currentProduct?.price2 || "N/A"}
+                {currentProduct?.price2 || "N/A"}₽
               </Typography>
               <Typography sx={{ marginTop: "10px" }} variant="h5">
-                €{currentProduct?.price || "N/A"}
+                {currentProduct?.price || "N/A"}₽
               </Typography>
             </div>
             <Typography variant="h6" sx={{ marginTop: "10px", marginBottom: "20px" }}>
