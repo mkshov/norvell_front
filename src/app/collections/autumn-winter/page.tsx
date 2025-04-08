@@ -1,6 +1,6 @@
 import React from "react";
 // import { useState } from "react";
-import "../../Collections/Collections.css";
+import "../../collections/Collections.css";
 
 import { CardActionArea, Typography } from "@mui/material";
 import Link from "next/link";
