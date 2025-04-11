@@ -38,16 +38,16 @@ const summer = [
   {
     image: "/assets/collections/img16.jpg",
     text_it:
-      "Un nuovo capolavoro, imprescindibile nel guardaroba di ogni contemporaneo conoscitore di un'eleganza senza tempo: un abito caratterizzato da una giacca sfoderata con tre bottoni, due tasche applicate e pantaloni scollati con coulisse in vita. Tagliato e cucito esclusivamente a mano da un esclusivo tessuto Daniel Hazard, in 52% lino, 41% lana e 7% seta.",
+      "Un nuovo capolavoro, imprescindibile nel guardaroba di ogni contemporaneo conoscitore di un'eleganza senza tempo: un abito caratterizzato da una giacca sfoderata con tre bottoni, due tasche applicate e pantaloni scollati con coulisse in vita. Tagliato e cucito esclusivamente a mano da un esclusivo tessuto Grand Hill, in 52% lino, 41% lana e 7% seta.",
     text_en:
-      "Новый шедевр, необходимый в гардеробе каждого современного ценителя вневременной элегантности: костюм, состоящий из неструктурированного пиджака с тремя пуговицами, двумя накладными карманами и брюк без складок с кулиской на талии. Сшит полностью вручную из эксклюзивной ткани Daniel Hazard: 52% лен, 41% шерсть и 7% шелк.",
+      "Новый шедевр, необходимый в гардеробе каждого современного ценителя вневременной элегантности: костюм, состоящий из неструктурированного пиджака с тремя пуговицами, двумя накладными карманами и брюк без складок с кулиской на талии. Сшит полностью вручную из эксклюзивной ткани Grand Hill: 52% лен, 41% шерсть и 7% шелк.",
   },
   {
     image: "/assets/collections/img17.jpg",
     text_it:
-      "Un nuovo capolavoro, imprescindibile nel guardaroba di ogni contemporaneo conoscitore di un'eleganza senza tempo: un abito caratterizzato da una giacca destrutturata con tre bottoni, due tasche applicate e pantaloni con due pieghe e coulisse in vita. Tagliato e cucito esclusivamente a mano da un tessuto con un esclusivo motivo a scacchi Daniel Hazard, in 100% lino.",
+      "Un nuovo capolavoro, imprescindibile nel guardaroba di ogni contemporaneo conoscitore di un'eleganza senza tempo: un abito caratterizzato da una giacca destrutturata con tre bottoni, due tasche applicate e pantaloni con due pieghe e coulisse in vita. Tagliato e cucito esclusivamente a mano da un tessuto con un esclusivo motivo a scacchi Grand Hill, in 100% lino.",
     text_en:
-      "Новый шедевр, необходимый в гардеробе каждого современного ценителя вневременной элегантности: костюм с неструктурированным пиджаком на трёх пуговицах, двумя накладными карманами и брюками с двумя складками и кулиской на талии. Полностью сшит вручную из ткани с эксклюзивным клетчатым узором Daniel Hazard, 100% лён.",
+      "Новый шедевр, необходимый в гардеробе каждого современного ценителя вневременной элегантности: костюм с неструктурированным пиджаком на трёх пуговицах, двумя накладными карманами и брюками с двумя складками и кулиской на талии. Полностью сшит вручную из ткани с эксклюзивным клетчатым узором Grand Hill, 100% лён.",
   },
   {
     image: "/assets/collections/img18.jpg",
@@ -73,9 +73,9 @@ const summer = [
   {
     image: "/assets/collections/img21.jpg",
     text_it:
-      "Un capolavoro essenziale nel guardaroba di ogni conoscitore di eleganza senza tempo: abito semi-foderato, tre bottoni, due tasche a bugnato e pantaloni con due pieghe. Tagliato e cucito interamente a mano da un tessuto con un esclusivo design Daniel Hazard, in lana 100% S’170.",
+      "Un capolavoro essenziale nel guardaroba di ogni conoscitore di eleganza senza tempo: abito semi-foderato, tre bottoni, due tasche a bugnato e pantaloni con due pieghe. Tagliato e cucito interamente a mano da un tessuto con un esclusivo design Grand Hill, in lana 100% S’170.",
     text_en:
-      "Незаменимый шедевр в гардеробе каждого ценителя вневременной элегантности: полуподкладной костюм, три пуговицы, два кармана с листочкой и брюки с двумя складками. Полностью сшит вручную из ткани с эксклюзивным дизайном Daniel Hazard, 100% шерсть S’170.",
+      "Незаменимый шедевр в гардеробе каждого ценителя вневременной элегантности: полуподкладной костюм, три пуговицы, два кармана с листочкой и брюки с двумя складками. Полностью сшит вручную из ткани с эксклюзивным дизайном Grand Hill, 100% шерсть S’170.",
   },
   {
     image: "/assets/collections/img22.jpg",

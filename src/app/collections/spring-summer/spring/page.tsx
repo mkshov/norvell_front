@@ -41,14 +41,14 @@ const spring = [
   {
     image: "/assets/collections/img11.jpg",
     text_it:
-      "Un nuovo capolavoro, imprescindibile nel guardaroba di ogni contemporaneo conoscitore di un'eleganza senza tempo: un abito caratterizzato da una giacca sfoderata con tre bottoni, due tasche applicate e pantaloni scollati con coulisse in vita. Tagliato e cucito esclusivamente a mano da un esclusivo tessuto Daniel Hazard, in 52% lino, 41% lana e 7% seta.",
+      "Un nuovo capolavoro, imprescindibile nel guardaroba di ogni contemporaneo conoscitore di un'eleganza senza tempo: un abito caratterizzato da una giacca sfoderata con tre bottoni, due tasche applicate e pantaloni scollati con coulisse in vita. Tagliato e cucito esclusivamente a mano da un esclusivo tessuto Grand Hill, in 52% lino, 41% lana e 7% seta.",
     text_en:
-      "Новый шедевр, обязательный в гардеробе любого современного ценителя вечной элегантности: костюм с непроклеенной курткой на три пуговицы, двумя накладными карманами и брюками без складок на талии с кулиской. Полностью вручную сшит из эксклюзивной ткани Daniel Hazard: 52% лён, 41% шерсть и 7% шёлк.",
+      "Новый шедевр, обязательный в гардеробе любого современного ценителя вечной элегантности: костюм с непроклеенной курткой на три пуговицы, двумя накладными карманами и брюками без складок на талии с кулиской. Полностью вручную сшит из эксклюзивной ткани Grand Hill: 52% лён, 41% шерсть и 7% шёлк.",
   },
   {
     image: "/assets/collections/img12.jpg",
     text_it:
-      "Un'eccezionale giacca sfoderata con tre bottoni e due tasche applicate, basata su un modello esclusivo disegnato e creato da Daniel Hazard. Cucito interamente a mano, estremamente morbido al tatto e comodo da indossare, in 55% cashmere, 25% seta e 20% lino.",
+      "Un'eccezionale giacca sfoderata con tre bottoni e due tasche applicate, basata su un modello esclusivo disegnato e creato da Grand Hill. Cucito interamente a mano, estremamente morbido al tatto e comodo da indossare, in 55% cashmere, 25% seta e 20% lino.",
     text_en:
       "Исключительный пиджак без подкладки с тремя пуговицами и двумя накладными карманами, созданный по эксклюзивной модели Даниэля Хазарда. Полностью вручную сшит, невероятно мягкий на ощупь и комфортный в носке: 55% кашемир, 25% шёлк, 20% лён.",
   },
@@ -69,7 +69,7 @@ const spring = [
   {
     image: "/assets/collections/img15.jpg",
     text_it:
-      "Un'eccezionale giacca sfoderata con tre bottoni e due tasche applicate, basata su un modello esclusivo disegnato e creato da Daniel Hazard. Cucito interamente a mano, estremamente morbido al tatto e comodo da indossare, in 70% cashmere, 17% seta e 13% lino.",
+      "Un'eccezionale giacca sfoderata con tre bottoni e due tasche applicate, basata su un modello esclusivo disegnato e creato da Grand Hill. Cucito interamente a mano, estremamente morbido al tatto e comodo da indossare, in 70% cashmere, 17% seta e 13% lino.",
     text_en:
       "Исключительный пиджак без подкладки с тремя пуговицами и двумя накладными карманами, основанный на эксклюзивной модели от Даниэля Хазарда. Полностью сшит вручную, чрезвычайно мягкий на ощупь и комфортный в носке: 70% кашемир, 17% шёлк, 13% лён.",
   },
