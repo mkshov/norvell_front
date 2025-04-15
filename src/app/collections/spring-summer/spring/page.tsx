@@ -7,7 +7,7 @@ import "../../Collections.css";
 
 const Spring = () => {
   return (
-    <div>
+    <div className="mt-100">
       <div className="sp-sm-txt2">
         <Typography sx={{ textTransform: "uppercase" }} variant="h4">
           Весна

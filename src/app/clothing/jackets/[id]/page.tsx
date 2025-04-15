@@ -1,13 +1,13 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
 import { ArrowBackIos, ArrowForwardIos } from "@mui/icons-material";
-import { Typography } from "@mui/material";
+import { Box, Button, Typography } from "@mui/material";
 import { Drawer, MyAccordion, ProductInfo, Recommended } from "@/components";
 import { useParams } from "next/navigation";
-import jacketsProducts from "@/utils/mockData/JacketsData";
+import jacketsData from "@/utils/mockData/JacketsData";
+import { addToCart, getCart, updateCartItemQuantity } from "@/utils/LocalStorage/cartStorage";
 
-// Типизация пропсов для кнопок
 interface BtnProps {
   className?: string;
   onClick?: () => void;
@@ -39,22 +39,30 @@ const NextBtn: React.FC<BtnProps> = ({ className, onClick }) => (
 const TypedSlider = Slider as unknown as React.ComponentType<SliderSettings>;
 
 const Details: React.FC = () => {
-  const params = useParams(); // Получаем все параметры
-  const id = params?.id; // id может быть string | string[] | undefined
+  const params = useParams();
+  const id = params?.id;
+  const productIdRaw = Array.isArray(id) ? id[0] : id;
+  const productId = productIdRaw ? parseInt(productIdRaw, 10) : undefined;
 
-  // Преобразуем id в число, обрабатывая все случаи
-  const productIdRaw = Array.isArray(id) ? id[0] : id; // Берем первый элемент, если массив
-  const productId = productIdRaw ? parseInt(productIdRaw, 10) : undefined; // Преобразуем в число или undefined
+  const currentProduct = productId !== undefined ? jacketsData.find((item) => item.id === productId) : undefined;
 
-  // Ищем продукт, только если productId определен
-  const currentProduct = productId !== undefined ? jacketsProducts.find((item) => item.id === productId) : undefined;
+  // Состояние для количества товара в корзине
+  const [quantity, setQuantity] = useState(0);
 
-  // Обработка случая, если продукт не найден
+  // Проверяем, есть ли товар в корзине при загрузке
+  useEffect(() => {
+    if (productId !== undefined) {
+      const cart = getCart();
+      const cartItem = cart.find((item) => item.id === productId);
+      setQuantity(cartItem ? cartItem.quantity : 0);
+    }
+  }, [productId]);
+
   if (productId === undefined || !currentProduct) {
     return <div>Product not found</div>;
   }
 
-  const data = [currentProduct?.image, currentProduct?.image2, currentProduct?.image3].filter(Boolean) as string[]; // Убираем undefined и типизируем как массив строк
+  const data = [currentProduct?.image, currentProduct?.image2, currentProduct?.image3].filter(Boolean) as string[];
 
   const settings: SliderSettings = {
     dots: true,
@@ -69,14 +77,30 @@ const Details: React.FC = () => {
     ),
   };
 
+  // Функция добавления в корзину
+  const handleAddToCart = () => {
+    addToCart({
+      id: currentProduct.id,
+      title: currentProduct.title,
+      price: currentProduct.price,
+      image: currentProduct.image,
+      quantity: 1,
+    });
+    setQuantity(1);
+  };
+
+  // Функция изменения количества
+  const handleChangeQuantity = (newQuantity: number) => {
+    updateCartItemQuantity(currentProduct.id, newQuantity);
+    setQuantity(newQuantity);
+  };
+
   return (
-    <div className="product">
+    <div className="mt-100">
       <div className="product-container">
         <TypedSlider className="product-slider" {...settings}>
           {data.map((item, index) => (
             <div key={index}>
-              {" "}
-              {/* Используем индекс как стабильный ключ */}
               <img className="product-slider-img" src={item} alt={currentProduct?.title || ""} />
             </div>
           ))}
@@ -118,7 +142,24 @@ const Details: React.FC = () => {
             <Typography variant="h6" sx={{ marginTop: "50px" }}>
               {currentProduct?.description_en || "Описание отсутствует"}
             </Typography>
-            <Drawer />
+            <Box sx={{ display: "flex", alignItems: "center", gap: 1, marginTop: "20px" }}>
+              {quantity === 0 ? (
+                <Button sx={{ fontWeight: "bold" }} className="main-button" onClick={handleAddToCart}>
+                  В корзину
+                </Button>
+              ) : (
+                <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
+                  <Button sx={{ fontWeight: "bold", minWidth: "35px" }} className="main-button" onClick={() => handleChangeQuantity(quantity - 1)}>
+                    -
+                  </Button>
+                  <Typography>{quantity}</Typography>
+                  <Button sx={{ fontWeight: "bold", minWidth: "35px" }} className="main-button" onClick={() => handleChangeQuantity(quantity + 1)}>
+                    +
+                  </Button>
+                </Box>
+              )}
+              <Drawer />
+            </Box>
           </div>
         </div>
       </div>

@@ -48,6 +48,7 @@
 .product-wrapper {
   position: relative;
   overflow: hidden;
+  cursor: pointer;
 }
 .product-img {
   transition: 0.3s;

@@ -7,7 +7,7 @@ import "../../Collections.css";
 
 const Summer = () => {
   return (
-    <div>
+    <div className="mt-100">
       <div className="sp-sm-txt2">
         <Typography variant="h4">Лето</Typography>
         <img className="sp-img" src="/assets/underline.jpg" alt="" />

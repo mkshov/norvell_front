@@ -8,7 +8,7 @@ import "./AboutUs.css";
 
 const AbotUs = () => {
   return (
-    <div>
+    <div className="mt-100">
       <section>
         <div className="about-us-header">
           <Typography variant="h4">О нашей компании</Typography>

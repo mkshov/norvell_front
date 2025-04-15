@@ -241,7 +241,7 @@ export default function TemporaryDrawer() {
   );
 
   return (
-    <div className="mt-20">
+    <div>
       {["right"].map((anchor) => (
         <React.Fragment key={anchor}>
           <Button sx={{ fontWeight: "bold" }} onClick={toggleDrawer(anchor, true)} className="main-button">

@@ -1,9 +1,9 @@
 "use client";
 import React, { useEffect, useState } from "react";
-// import clsx from "clsx";
-
 import AppBar from "@mui/material/AppBar";
 import SearchIcon from "@mui/icons-material/Search";
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import Badge from "@mui/material/Badge";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
@@ -14,13 +14,24 @@ import "./header.css";
 
 import { useRouter } from "next/navigation";
 import Sidebar from "./Sidebar";
+import { getCartItemCount } from "@/utils/LocalStorage/cartStorage";
 
 export default function Header() {
   const router = useRouter();
 
   const [openSidebar, setOpenSidebar] = useState(false);
   const [isOpenShopMenu, setIsOpenShopMenu] = useState(false);
-  // console.log("isOpenShopMenu: ", isOpenShopMenu);
+  const [cartItemCount, setCartItemCount] = useState(0);
+
+  // Обновляем количество товаров в корзине
+  useEffect(() => {
+    setCartItemCount(getCartItemCount());
+    const handleCartUpdate = () => {
+      setCartItemCount(getCartItemCount());
+    };
+    window.addEventListener("cartUpdated", handleCartUpdate);
+    return () => window.removeEventListener("cartUpdated", handleCartUpdate);
+  }, []);
 
   const toggleSidebar = () => {
     setOpenSidebar((open) => !open);
@@ -62,7 +73,7 @@ export default function Header() {
     };
   }, [openSidebar]);
 
-  const handleClickNavigate = (path: any) => (e: any) => {
+  const handleClickNavigate = (path: string) => () => {
     setIsOpenShopMenu(false);
     router.push(path);
   };
@@ -93,14 +104,19 @@ export default function Header() {
             <Box
               sx={{
                 height: "100%",
-                width: "40px",
                 display: "flex",
-                justifyContent: "center",
+                gap: 2,
+                alignItems: "center",
               }}
             >
-              <SearchIcon sx={{ fontSize: "30px", color: "#01041e" }} onMouseOver={handleOpenShopMenu} />
+              <SearchIcon sx={{ fontSize: "30px", color: "#01041e", cursor: "pointer" }} onMouseOver={handleOpenShopMenu} />
             </Box>
           </Box>
+          <Box sx={{ margin: "0 20px" }} className="border3 header-routes"></Box>
+
+          <Badge badgeContent={cartItemCount} color="error">
+            <ShoppingCartIcon sx={{ fontSize: "30px", color: "#01041e", cursor: "pointer" }} onClick={() => router.push("/cart")} />
+          </Badge>
         </Toolbar>
         <Collapse className="header-category" in={isOpenShopMenu}>
           <ul>
@@ -125,7 +141,7 @@ export default function Header() {
           </ul>
         </Collapse>
       </AppBar>
-      {<Sidebar navHeight={navHeight} open={openSidebar} toggleSidebar={toggleSidebar} />}
+      <Sidebar navHeight={navHeight} open={openSidebar} toggleSidebar={toggleSidebar} />
     </Box>
   );
 }
