@@ -67,7 +67,7 @@ const CartPage: React.FC = () => {
                 bgcolor: "#fff",
               }}
             >
-              <Box sx={{ width: 100, height: 100, position: "relative", mr: 2 }}>
+              <Box sx={{ width: 100, height: 100, position: "relative", mr: 2, display: { xs: "none", sm: "inline-block" } }}>
                 <Image src={item.image} alt={item.title} fill style={{ objectFit: "cover", borderRadius: 4 }} />
               </Box>
               <Box sx={{ flex: 1 }}>
@@ -78,14 +78,16 @@ const CartPage: React.FC = () => {
                   {item.price.toLocaleString()}₽ / шт.
                 </Typography>
               </Box>
-              <Box sx={{ display: "flex", alignItems: "center", gap: 1, mr: 2 }}>
-                <IconButton onClick={() => handleChangeQuantity(item.id, item.quantity - 1)}>-</IconButton>
-                <Typography>{item.quantity}</Typography>
-                <IconButton onClick={() => handleChangeQuantity(item.id, item.quantity + 1)}>+</IconButton>
+              <Box>
+                <Box sx={{ display: "flex", alignItems: "center", gap: 1, mr: 2 }}>
+                  <IconButton onClick={() => handleChangeQuantity(item.id, item.quantity - 1)}>-</IconButton>
+                  <Typography>{item.quantity}</Typography>
+                  <IconButton onClick={() => handleChangeQuantity(item.id, item.quantity + 1)}>+</IconButton>
+                </Box>
+                <Typography variant="h6" sx={{ color: "#01041e" }}>
+                  {(item.price * item.quantity).toLocaleString()}₽
+                </Typography>
               </Box>
-              <Typography variant="h6" sx={{ color: "#01041e" }}>
-                {(item.price * item.quantity).toLocaleString()}₽
-              </Typography>
             </Box>
           ))}
           <Button sx={{ mt: 2 }} color="error" onClick={handleClearCart}>

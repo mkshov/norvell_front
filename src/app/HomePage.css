@@ -71,6 +71,8 @@
 .slide-2 img {
   width: 100%;
   transform: scale(-1, 1);
+  min-height: calc(100vh - 80px);
+  object-fit: cover;
 }
 .slide-2-overlay {
   position: absolute;
@@ -360,6 +362,13 @@ h3 {
   }
 }
 @media all and (max-width: 1150px) {
+  .video-background {
+    object-position: right;
+    height: calc(50vh - 80px);
+  }
+  .slide-2 img {
+    min-height: calc(50vh - 80px);
+  }
   .slide-padding {
     padding: 10px;
   }

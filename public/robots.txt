@@ -1,0 +1,14 @@
+# *
+User-agent: *
+Allow: /
+
+# *
+User-agent: *
+Disallow: /private
+Disallow: /admin
+
+# Host
+Host: https://grand-hill.ru
+
+# Sitemaps
+Sitemap: https://grand-hill.ru/sitemap.xml

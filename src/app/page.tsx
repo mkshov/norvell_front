@@ -67,7 +67,6 @@ const HomePage = () => {
                 <Box data-aos="fade-center" data-aos-offset="200" data-aos-duration="500" className="slide-1-inner">
                   <Typography variant="h3">Новая коллекция</Typography>
                   <Typography variant="h5">Весна - лето</Typography>
-                  <Typography variant="h4">Стилевые рамки</Typography>
                   <Button className="main-button" onClick={handleClickNavigate("/collections/spring-summer")} variant="outlined" color="inherit">
                     Узнать больше
                   </Button>
@@ -77,7 +76,7 @@ const HomePage = () => {
           </Box>
           <Box>
             <Box className="slide-2">
-              <img alt="Background-2" src="/assets/HomePage/img2.jpg" />
+              <img alt="background-2" src="/assets/HomePage/img2.jpg" />
               <Box className="slide-2-overlay">
                 <Box className="slide-2-inner">
                   <Typography variant="h3">Новая коллекция</Typography>

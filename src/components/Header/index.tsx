@@ -8,7 +8,7 @@ import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Hamburger from "hamburger-react";
-import { Collapse } from "@mui/material";
+import { Collapse, Fab } from "@mui/material";
 
 import "./header.css";
 
@@ -114,7 +114,7 @@ export default function Header() {
           </Box>
           <Box sx={{ margin: "0 20px" }} className="border3 header-routes"></Box>
 
-          <Badge badgeContent={cartItemCount} color="error">
+          <Badge className="cart-in-header" badgeContent={cartItemCount} color="error">
             <ShoppingCartIcon sx={{ fontSize: "30px", color: "#01041e", cursor: "pointer" }} onClick={() => router.push("/cart")} />
           </Badge>
         </Toolbar>
@@ -142,6 +142,16 @@ export default function Header() {
         </Collapse>
       </AppBar>
       <Sidebar navHeight={navHeight} open={openSidebar} toggleSidebar={toggleSidebar} />
+      <Fab
+        className="cart-fab"
+        aria-label="add"
+        sx={{ position: "fixed", bottom: 20, right: 20, background: "white" }}
+        onClick={() => router.push("/cart")}
+      >
+        <Badge badgeContent={cartItemCount} color="error">
+          <ShoppingCartIcon sx={{ fontSize: "30px", color: "#01041e", cursor: "pointer" }} />
+        </Badge>
+      </Fab>
     </Box>
   );
 }

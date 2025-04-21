@@ -170,6 +170,19 @@
   transform: translateY(-100%) !important;
 }
 
+.cart-fab {
+  visibility: hidden;
+}
+
+@media all and (max-width: 555px) {
+  .cart-in-header {
+    display: none !important;
+  }
+  .cart-fab {
+    visibility: visible;
+  }
+}
+
 @media all and (max-width: 915px) {
   .header-routes {
     display: none;
