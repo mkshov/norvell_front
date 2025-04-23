@@ -2,10 +2,11 @@
 import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
 import { ArrowBackIos, ArrowForwardIos } from "@mui/icons-material";
-import { Box, Button, Typography } from "@mui/material";
+import { Box, Button, Modal, Typography, IconButton, styled } from "@mui/material";
+import CloseIcon from "@mui/icons-material/Close";
 import { Drawer, MyAccordion, ProductInfo, Recommended } from "@/components";
 import { useParams } from "next/navigation";
-import jacketsData from "@/utils/mockData/JacketsData";
+import jackets from "@/utils/mockData/JacketsData";
 import { addToCart, getCart, updateCartItemQuantity } from "@/utils/LocalStorage/cartStorage";
 
 interface BtnProps {
@@ -44,10 +45,13 @@ const Details: React.FC = () => {
   const productIdRaw = Array.isArray(id) ? id[0] : id;
   const productId = productIdRaw ? parseInt(productIdRaw, 10) : undefined;
 
-  const currentProduct = productId !== undefined ? jacketsData.find((item) => item.id === productId) : undefined;
+  const currentProduct = productId !== undefined ? jackets.find((item) => item.id === productId) : undefined;
 
   // Состояние для количества товара в корзине
   const [quantity, setQuantity] = useState(0);
+  // Состояние для модального окна и увеличенного изображения
+  const [openModal, setOpenModal] = useState(false);
+  const [zoomedImage, setZoomedImage] = useState<string | null>(null);
 
   // Проверяем, есть ли товар в корзине при загрузке
   useEffect(() => {
@@ -95,16 +99,58 @@ const Details: React.FC = () => {
     setQuantity(newQuantity);
   };
 
+  // Функция открытия модального окна с увеличенным изображением
+  const handleImageClick = (image: string) => {
+    setZoomedImage(image);
+    setOpenModal(true);
+  };
+
+  // Функция закрытия модального окна
+  const handleCloseModal = () => {
+    setOpenModal(false);
+    setZoomedImage(null);
+  };
+
   return (
     <div className="mt-100">
       <div className="product-container">
         <TypedSlider className="product-slider" {...settings}>
           {data.map((item, index) => (
             <div key={index}>
-              <img className="product-slider-img" src={item} alt={currentProduct?.title || ""} />
+              <img
+                className="product-slider-img"
+                src={item}
+                alt={currentProduct?.title || ""}
+                onClick={() => handleImageClick(item)}
+                style={{ cursor: "zoom-in", position: "relative", zIndex: index === 0 ? 5 : index === 1 ? 6 : 7 }}
+              />
             </div>
           ))}
         </TypedSlider>
+
+        <Modal
+          open={openModal}
+          onClose={handleCloseModal}
+          aria-labelledby="zoomed-image-modal"
+          sx={{ display: "flex", alignItems: "center", justifyContent: "center" }}
+        >
+          <ModalInner sx={{ boxShadow: 24, p: 2 }}>
+            <IconButton
+              onClick={handleCloseModal}
+              sx={{
+                position: "absolute",
+                top: 8,
+                right: 8,
+                color: "white",
+                bgcolor: "rgba(0, 0, 0, 0.5)",
+                "&:hover": { bgcolor: "rgba(0, 0, 0, 0.7)" },
+              }}
+            >
+              <CloseIcon />
+            </IconButton>
+            {zoomedImage && <ZoomedImage src={zoomedImage} alt="Zoomed product" />}
+          </ModalInner>
+        </Modal>
 
         <div className="product-info">
           <div className="product-info2">
@@ -142,7 +188,7 @@ const Details: React.FC = () => {
             <Typography variant="h6" sx={{ marginTop: "50px" }}>
               {currentProduct?.description_en || "Описание отсутствует"}
             </Typography>
-            <Box sx={{ display: "flex", alignItems: "center", gap: 1, marginTop: "20px" }}>
+            <Box sx={{ display: "flex", alignItems: "center", gap: 1, marginTop: "20px", justifyContent: { xs: "center", md: "flex-start" } }}>
               {quantity === 0 ? (
                 <Button sx={{ fontWeight: "bold" }} className="main-button" onClick={handleAddToCart}>
                   В корзину
@@ -170,3 +216,26 @@ const Details: React.FC = () => {
 };
 
 export default Details;
+
+const ZoomedImage = styled("img")({
+  maxWidth: "100%",
+  maxHeight: "90vh",
+  objectFit: "contain",
+  "@media (max-width: 800px)": {
+    maxHeight: "none",
+    height: "100%",
+    width: "auto",
+    objectFit: "cover",
+  },
+});
+
+const ModalInner = styled(Box)({
+  position: "relative",
+  maxWidth: "95vw",
+  maxHeight: "95vh",
+  backgroundColor: "transparent",
+  "@media (max-width: 800px)": {
+    height: "85vh",
+    width: "100%",
+  },
+});

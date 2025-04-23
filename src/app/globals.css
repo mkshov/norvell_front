@@ -26,6 +26,7 @@ body {
 
 * {
   box-sizing: border-box;
+  outline: none !important;
   padding: 0;
   margin: 0;
 }
@@ -178,6 +179,13 @@ li {
 .slick-next::before {
   display: none;
 }
+.slider img {
+  outline: none;
+}
+.slick-dots li button {
+  outline: none;
+}
+
 .mt-100 {
   margin-top: 100px;
 }

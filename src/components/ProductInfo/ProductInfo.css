@@ -1,5 +1,6 @@
 .info-component {
   margin-top: 200px;
+  padding: 0 30px;
 }
 .info-component-txt {
   text-align: center;
@@ -49,5 +50,29 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 100px;
+  }
+  .info-component-txt h3 {
+    font-size: 26px;
+  }
+  .info-component-txt h5 {
+    font-size: 18px;
+  }
+  .info-component-inner img {
+    width: 30px;
+    height: 30px;
+  }
+  .info-component-inner span {
+    font-size: 13px;
+  }
+  .info-component-inner p {
+    font-size: 13px;
+  }
+}
+
+@media all and (max-width: 420px) {
+  .info-component-inner {
+    width: 120px;
+    margin: 10px;
   }
 }
