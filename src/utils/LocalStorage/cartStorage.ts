@@ -1,9 +1,12 @@
 export interface CartItem {
+  cartItemId?: string; // unique identifier: id + size + height
   id: number;
   title: string;
   price: number;
   image: string;
   quantity: number;
+  size?: string | null;
+  height?: string | null;
 }
 
 export const getCart = (): CartItem[] => {
@@ -14,12 +17,17 @@ export const getCart = (): CartItem[] => {
 
 export const addToCart = (item: CartItem): CartItem[] => {
   const cart = getCart();
-  const existingItem = cart.find((cartItem) => cartItem.id === item.id);
+  const targetId = item.cartItemId || item.id.toString();
+  
+  // ensure item has cartItemId set before saving
+  const itemToSave = { ...item, cartItemId: targetId };
+  
+  const existingItem = cart.find((cartItem) => (cartItem.cartItemId || cartItem.id.toString()) === targetId);
 
   if (existingItem) {
     existingItem.quantity += item.quantity;
   } else {
-    cart.push(item);
+    cart.push(itemToSave);
   }
 
   localStorage.setItem("cart", JSON.stringify(cart));
@@ -27,12 +35,13 @@ export const addToCart = (item: CartItem): CartItem[] => {
   return cart;
 };
 
-export const updateCartItemQuantity = (id: number, quantity: number): CartItem[] => {
+export const updateCartItemQuantity = (cartItemId: string | number, quantity: number): CartItem[] => {
   const cart = getCart();
-  const updatedCart = cart.map((item) => (item.id === id ? { ...item, quantity } : item));
+  const targetId = cartItemId.toString();
+  const updatedCart = cart.map((item) => ((item.cartItemId || item.id.toString()) === targetId ? { ...item, quantity } : item));
 
   if (quantity <= 0) {
-    return removeFromCart(id);
+    return removeFromCart(cartItemId);
   }
 
   localStorage.setItem("cart", JSON.stringify(updatedCart));
@@ -40,9 +49,10 @@ export const updateCartItemQuantity = (id: number, quantity: number): CartItem[]
   return updatedCart;
 };
 
-export const removeFromCart = (id: number): CartItem[] => {
+export const removeFromCart = (cartItemId: string | number): CartItem[] => {
   const cart = getCart();
-  const updatedCart = cart.filter((item) => item.id !== id);
+  const targetId = cartItemId.toString();
+  const updatedCart = cart.filter((item) => (item.cartItemId || item.id.toString()) !== targetId);
 
   localStorage.setItem("cart", JSON.stringify(updatedCart));
   window.dispatchEvent(new Event("cartUpdated"));

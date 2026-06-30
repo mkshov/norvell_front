@@ -61,6 +61,23 @@ const Sidebar = (props: any) => {
         <div className={clsx(open ? "sidebar--open sidebar" : "sidebar", open && navHeight === "header" && "navHeight")}>
           <div>
             <List sx={{ padding: 0 }}>
+              <MyListItem onClick={handleClick}>
+                <ListItemText primary={"Костюмы"} />
+                {openList1 ? <ExpandLess /> : <ExpandMore />}
+              </MyListItem>
+              <Collapse in={openList1} timeout="auto" unmountOnExit>
+                <List component="div" disablePadding>
+                  <MyListItemCollapse onClick={handleClickNavigate("/suits/suit")}>
+                    <MyListItemText primary={"Костюм"} />
+                  </MyListItemCollapse>
+                </List>
+                <List component="div" disablePadding>
+                  <MyListItemCollapse onClick={handleClickNavigate("/suits/suit-trio")}>
+                    <MyListItemText primary={"Костюм-тройка"} />
+                  </MyListItemCollapse>
+                </List>
+              </Collapse>
+
               <MyListItem
                 sx={{
                   padding: "0.7rem 2rem",
@@ -100,23 +117,6 @@ const Sidebar = (props: any) => {
                 </List>
               </Collapse>
 
-              <MyListItem onClick={handleClick}>
-                <ListItemText primary={"Костюмы"} />
-                {/* <Typography variant="h5">CATEGORY</Typography> */}
-                {openList1 ? <ExpandLess /> : <ExpandMore />}
-              </MyListItem>
-              <Collapse in={openList1} timeout="auto" unmountOnExit>
-                <List component="div" disablePadding>
-                  <MyListItemCollapse onClick={handleClickNavigate("/suits/everyday")}>
-                    <MyListItemText primary={"На каждый день"} />
-                  </MyListItemCollapse>
-                </List>
-                <List component="div" disablePadding>
-                  <MyListItemCollapse onClick={handleClickNavigate("/suits/wedding")}>
-                    <MyListItemText primary={"На свадьбу"} />
-                  </MyListItemCollapse>
-                </List>
-              </Collapse>
               <MyListItem onClick={handleClickNavigate("/about-us")}>
                 <ListItemText primary={"О нас"} />
               </MyListItem>

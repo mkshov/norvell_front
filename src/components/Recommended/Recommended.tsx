@@ -1,47 +1,58 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import { Button, Typography } from "@mui/material";
+import { Button, Typography, Skeleton } from "@mui/material";
 import { useRouter } from "next/navigation";
-import products from "@/utils/mockData/SuitsData";
-import jackets from "@/utils/mockData/JacketsData";
-import trousers from "@/utils/mockData/TrousersData";
+import { fetchProducts, ApiProduct, getMainImage } from "@/utils/api/productsApi";
 import "../../app/suits/products.css";
-
-// Типизация продукта
-interface Product {
-  id: number;
-  image: string;
-  title: string;
-  price: number;
-  route: string;
-  route2: string;
-}
 
 const Recommended: React.FC = () => {
   const router = useRouter();
-  const [recommended, setRecommended] = useState<Product[]>([]);
-  const [isHydrated, setIsHydrated] = useState(false);
-
-  function randomArray(arr1: Product[], arr2: Product[], arr3: Product[]): Product[] {
-    const random1 = Math.floor(Math.random() * arr1.length);
-    const random2 = Math.floor(Math.random() * arr2.length);
-    const random3 = Math.floor(Math.random() * arr3.length);
-    return [arr1[random1], arr2[random2], arr3[random3]];
-  }
+  const [recommended, setRecommended] = useState<ApiProduct[]>([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    setRecommended(randomArray(products, jackets, trousers));
-    setIsHydrated(true);
-  }, []); // Выполняется только на клиенте после монтирования
+    const loadRandomProducts = async () => {
+      try {
+        const data = await fetchProducts({ limit: 40 });
+        const allProducts = data.results;
+        
+        // Shuffle array and pick first 3
+        const shuffled = [...allProducts].sort(() => 0.5 - Math.random());
+        const selected = shuffled.slice(0, 3);
+        
+        setRecommended(selected);
+      } catch (error) {
+        console.error("Failed to load recommended products", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+    loadRandomProducts();
+  }, []);
 
-  const handleClickNavigate = (route: string) => () => {
-    router.push(route);
+  const handleClickNavigate = (id: number) => () => {
+    // We default to /suits/suit/[id] for all products since we unified the detail page wrapper
+    router.push(`/suits/suit/${id}`);
   };
 
-  // Не рендерим ничего до завершения гидратации
-  if (!isHydrated) {
-    return null; // Или placeholder, например <div>Loading recommendations...</div>
+  if (loading) {
+    return (
+      <div className="recommended" style={{ minHeight: "400px", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center" }}>
+        <Typography variant="h4" sx={{ mb: 4 }}>Рекомендуемые товары</Typography>
+        <div className="recommended-container" style={{ width: "100%", justifyContent: "center", gap: "20px" }}>
+          {[1, 2, 3].map(i => (
+            <div key={i} className="recommended-block">
+              <Skeleton variant="rectangular" width="100%" height={300} />
+              <Skeleton variant="text" width="80%" sx={{ mt: 2 }} />
+              <Skeleton variant="text" width="40%" />
+            </div>
+          ))}
+        </div>
+      </div>
+    );
   }
+
+  if (recommended.length === 0) return null;
 
   return (
     <div className="recommended">
@@ -49,18 +60,18 @@ const Recommended: React.FC = () => {
       <img src="https://i.shgcdn.com/b1dfc452-0cb3-40a2-9fa1-4cfdcbfe5f13/-/format/auto/-/preview/3000x3000/-/quality/lighter/" alt="" />
       <div className="recommended-container">
         {recommended.map((item) => (
-          <div key={item.id} onClick={handleClickNavigate(`/${item.route}/${item.route2}/${item.id}`)} className="recommended-block">
+          <div key={item.id} onClick={handleClickNavigate(item.id)} className="recommended-block" style={{ cursor: "pointer" }}>
             <div className="product-wrapper">
-              <img className="product-img" src={item.image} alt={item.title} />
+              <img className="product-img" src={getMainImage(item)} alt={item.name} />
               <div className="middle">
-                <Button onClick={handleClickNavigate(`/${item.route}/${item.route2}/${item.id}`)} className="main-button">
+                <Button onClick={(e) => { e.stopPropagation(); handleClickNavigate(item.id)(); }} className="main-button">
                   УЗНАТЬ БОЛЬШЕ
                 </Button>
               </div>
             </div>
             <div className="text">
-              <Typography sx={{ fontWeight: "300" }}>{item.title}</Typography>
-              <Typography sx={{ fontWeight: "300", letterSpacing: "1px" }}>{item.price}₽</Typography>
+              <Typography sx={{ fontWeight: "300" }}>{item.name} {item.model}</Typography>
+              <Typography sx={{ fontWeight: "300", letterSpacing: "1px" }}>{Math.round(parseFloat(item.final_price)).toLocaleString("ru-RU")}₽</Typography>
             </div>
           </div>
         ))}

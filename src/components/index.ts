@@ -7,3 +7,5 @@ export { default as Recommended } from "./Recommended/Recommended";
 export { default as MyAccordion } from "./MyAccordion/MyAccordion";
 export { default as Drawer } from "./Drawer/Drawer";
 export { default as ProductInfo } from "./ProductInfo/ProductInfo";
+export { default as ApiProductsPage } from "./ApiProductsPage";
+export { default as ProductDetail } from "./ProductDetail";

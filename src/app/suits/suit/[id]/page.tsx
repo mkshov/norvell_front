@@ -2,8 +2,8 @@ import { Metadata } from "next";
 import { ProductDetail } from "@/components";
 
 export const metadata: Metadata = {
-	title: "Norvell - Брюки",
-	description: "Детальная страница брюк Norvell",
+	title: "Norvell - Продукт",
+	description: "Детальная страница товара Norvell",
 };
 
 export default ProductDetail;

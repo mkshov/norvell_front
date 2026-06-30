@@ -19,12 +19,16 @@ const CartPage: React.FC = () => {
     const handleStorageChange = () => {
       setCart(getCart());
     };
+    window.addEventListener("cartUpdated", handleStorageChange);
     window.addEventListener("storage", handleStorageChange);
-    return () => window.removeEventListener("storage", handleStorageChange);
+    return () => {
+      window.removeEventListener("cartUpdated", handleStorageChange);
+      window.removeEventListener("storage", handleStorageChange);
+    };
   }, []);
 
-  const handleChangeQuantity = (id: number, quantity: number) => {
-    updateCartItemQuantity(id, quantity);
+  const handleChangeQuantity = (cartItemId: string, quantity: number) => {
+    updateCartItemQuantity(cartItemId, quantity);
     setCart(getCart());
   };
 
@@ -55,9 +59,11 @@ const CartPage: React.FC = () => {
       </Typography>
       <Box sx={{ display: "flex", flexDirection: { xs: "column", md: "row" }, gap: 4 }}>
         <Box sx={{ flex: 2 }}>
-          {cart.map((item) => (
+          {cart.map((item) => {
+            const currentCartItemId = item.cartItemId || item.id.toString();
+            return (
             <Box
-              key={item.id}
+              key={currentCartItemId}
               sx={{
                 display: "flex",
                 alignItems: "center",
@@ -67,29 +73,45 @@ const CartPage: React.FC = () => {
                 bgcolor: "#fff",
               }}
             >
-              <Box sx={{ width: 100, height: 100, position: "relative", mr: 2, display: { xs: "none", sm: "inline-block" } }}>
+              <Box 
+                sx={{ width: 100, height: 100, position: "relative", mr: 2, display: { xs: "none", sm: "inline-block" }, cursor: "pointer" }}
+                onClick={() => router.push(`/suits/suit/${item.id}`)}
+              >
                 <Image src={item.image} alt={item.title} fill style={{ objectFit: "cover", borderRadius: 4 }} />
               </Box>
               <Box sx={{ flex: 1 }}>
-                <Typography variant="h6" sx={{ color: "#01041e" }}>
+                <Typography 
+                  variant="h6" 
+                  sx={{ color: "#01041e", cursor: "pointer", "&:hover": { textDecoration: "underline" } }}
+                  onClick={() => router.push(`/suits/suit/${item.id}`)}
+                >
                   {item.title}
                 </Typography>
+                
+                {(item.size || item.height) && (
+                  <Typography variant="body2" sx={{ color: "gray", mt: 0.5, mb: 0.5 }}>
+                    {item.size ? `Размер: ${item.size} ` : ""}
+                    {item.height ? `Рост: ${item.height}` : ""}
+                  </Typography>
+                )}
+
                 <Typography variant="body2" sx={{ color: "gray" }}>
                   {item.price.toLocaleString()}₽ / шт.
                 </Typography>
               </Box>
               <Box>
                 <Box sx={{ display: "flex", alignItems: "center", gap: 1, mr: 2 }}>
-                  <IconButton onClick={() => handleChangeQuantity(item.id, item.quantity - 1)}>-</IconButton>
+                  <IconButton onClick={() => handleChangeQuantity(currentCartItemId, item.quantity - 1)}>-</IconButton>
                   <Typography>{item.quantity}</Typography>
-                  <IconButton onClick={() => handleChangeQuantity(item.id, item.quantity + 1)}>+</IconButton>
+                  <IconButton onClick={() => handleChangeQuantity(currentCartItemId, item.quantity + 1)}>+</IconButton>
                 </Box>
                 <Typography variant="h6" sx={{ color: "#01041e" }}>
                   {(item.price * item.quantity).toLocaleString()}₽
                 </Typography>
               </Box>
             </Box>
-          ))}
+            );
+          })}
           <Button sx={{ mt: 2 }} color="error" onClick={handleClearCart}>
             Очистить корзину
           </Button>
