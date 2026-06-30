@@ -1,4 +1,4 @@
-const BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL || "https://api.smarty.roberto-riera.com";
+const BASE_URL = "/api/proxy";
 const TOKEN = process.env.NEXT_PUBLIC_API_TOKEN || "";
 
 export interface ApiImage {
@@ -49,17 +49,19 @@ function getHeaders(): HeadersInit {
 }
 
 export async function fetchProducts(params: Record<string, string | number | string[]> = {}): Promise<ApiResponse> {
-	const url = new URL(`${BASE_URL}/product/v1/rr-products/`);
+	const searchParams = new URLSearchParams();
 
 	Object.entries(params).forEach(([key, value]) => {
 		if (Array.isArray(value)) {
-			value.forEach((v) => url.searchParams.append(key, String(v)));
+			value.forEach((v) => searchParams.append(key, String(v)));
 		} else {
-			url.searchParams.set(key, String(value));
+			searchParams.set(key, String(value));
 		}
 	});
 
-	const res = await fetch(url.toString(), {
+	const urlString = `${BASE_URL}/product/v1/rr-products/${searchParams.toString() ? '?' + searchParams.toString() : ''}`;
+
+	const res = await fetch(urlString, {
 		headers: getHeaders(),
 		next: { revalidate: 60 },
 	});
@@ -102,11 +104,13 @@ export async function fetchProductById(id: number): Promise<ApiProduct> {
  * Jackets/trousers TBD
  */
 export async function fetchProductsByType(typeIds: number[], extraParams: Record<string, string | number> = {}): Promise<ApiResponse> {
-	const url = new URL(`${BASE_URL}/product/v1/rr-products/`);
-	typeIds.forEach((id) => url.searchParams.append("type", String(id)));
-	Object.entries(extraParams).forEach(([key, value]) => url.searchParams.set(key, String(value)));
+	const searchParams = new URLSearchParams();
+	typeIds.forEach((id) => searchParams.append("type", String(id)));
+	Object.entries(extraParams).forEach(([key, value]) => searchParams.set(key, String(value)));
 
-	const res = await fetch(url.toString(), {
+	const urlString = `${BASE_URL}/product/v1/rr-products/?${searchParams.toString()}`;
+
+	const res = await fetch(urlString, {
 		headers: getHeaders(),
 		next: { revalidate: 60 },
 	});
